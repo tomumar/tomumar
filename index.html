@@ -695,9 +695,14 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">
-                <img src="/images/Tom Umar.png" alt="Tom Umar - Book Marketing Specialist Expert" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#fff;">Tom <span style="color:var(--secondary);">Umar</span></span>
+            <a href="/" class="nav-logo" aria-label="Tom Umar home">
+                <img
+                    src="images/Tom%20Umar.png"
+                    alt="Tom Umar logo"
+                    class="logo-img"
+                    onerror="this.onerror=null; this.src='images/Tom Umar.png'; this.closest('.nav-logo').classList.add('is-fallback');"
+                >
+                <span class="nav-logo-fallback">Tom <span>Umar</span></span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="/" class="nav-link active">Home</a></li>
@@ -1133,6 +1138,6 @@
             lucide.createIcons();
         }
     </script>
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </body>
 </html>

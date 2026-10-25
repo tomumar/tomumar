@@ -13,27 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== PRELOADER =====
     const preloader = document.getElementById('preloader');
+    const body = document.body;
+
     if (preloader) {
         const hidePreloader = () => {
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-                document.body.classList.remove('no-scroll');
-            }, 2400);
+            preloader.classList.add('hidden');
+            if (body) body.classList.remove('no-scroll');
         };
 
-        if (document.readyState === 'complete') {
-            hidePreloader();
-        } else {
-            window.addEventListener('load', hidePreloader);
-        }
+        window.addEventListener('load', () => {
+            setTimeout(hidePreloader, 500);
+        }, { once: true });
 
-        // Fallback
-        setTimeout(() => {
-            if (!preloader.classList.contains('hidden')) {
-                preloader.classList.add('hidden');
-                document.body.classList.remove('no-scroll');
-            }
-        }, 5000);
+        setTimeout(hidePreloader, 1800);
     }
 
     // ===== CUSTOM CURSOR =====
