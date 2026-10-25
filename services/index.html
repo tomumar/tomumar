@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Tom Umar - Book Marketing Specialist Expert</title>
+    <meta name="description" content="Comprehensive book marketing services including launch campaigns, Amazon advertising, social media, email marketing, SEO, and PR. Tom Umar, 10+ years experience.">
+    <link rel="icon" type="image/png" href="../images/tom-umar-logo.png">
+    <link rel="apple-touch-icon" href="../images/tom-umar-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .services-full-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .service-full {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+            padding: var(--section-padding) 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .service-full:last-child { border-bottom: none; }
+
+        .service-full.reverse .service-full-content { order: 2; }
+        .service-full.reverse .service-full-visual { order: 1; }
+
+        .service-full-content .service-number {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--gray-200);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .service-full-content h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            margin-bottom: 20px;
+        }
+
+        .service-full-content .service-description {
+            font-size: 1.02rem;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .service-features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .service-features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .service-features-list li svg {
+            width: 20px;
+            height: 20px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .service-full-visual {
+            background: var(--gray-100);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-full-visual::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -30%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.06) 0%, transparent 70%);
+        }
+
+        .visual-stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .visual-stat {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .visual-stat:hover {
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .visual-stat .vs-number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .visual-stat .vs-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            display: block;
+        }
+
+        .visual-description {
+            margin-top: 28px;
+            padding: 24px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--secondary);
+            position: relative;
+            z-index: 2;
+        }
+
+        .visual-description p {
+            font-size: 0.92rem;
+            font-style: italic;
+            margin: 0;
+            line-height: 1.75;
+        }
+
+        /* Pricing Philosophy */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            background: rgba(var(--secondary-rgb), 0.06);
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-6px);
+        }
+
+        .pricing-card h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price-range {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .pricing-card p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .pricing-features {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .pricing-features li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .service-full { grid-template-columns: 1fr; gap: 40px; }
+            .service-full.reverse .service-full-content { order: 1; }
+            .service-full.reverse .service-full-visual { order: 2; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+        }
+
+        @media (max-width: 768px) {
+            .service-full { padding: 64px 0; }
+            .service-full-visual { padding: 32px; }
+            .visual-stat-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .service-full-content .service-number { font-size: 3.5rem; }
+            .service-full-visual { padding: 24px; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+    <div id="preloader"><div class="preloader-inner"><div class="preloader-logo">T</div><div class="preloader-text">Tom Umar</div><div class="preloader-bar"><div class="preloader-fill"></div></div></div></div>
+    <div class="cursor-dot"></div><div class="cursor-ring"></div><div class="nav-overlay" id="navOverlay"></div>
+
+    <nav class="navbar" id="navbar"><div class="nav-container"><a href="../" class="nav-logo"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="logo-img"></a><ul class="nav-menu" id="navMenu"><li><a href="../" class="nav-link">Home</a></li><li><a href="../about/" class="nav-link">About</a></li><li><a href="../services/" class="nav-link active">Services</a></li><li><a href="../process/" class="nav-link">Process</a></li><li><a href="../results/" class="nav-link">Results</a></li><li><a href="../testimonials/" class="nav-link">Testimonials</a></li><li><a href="../faq/" class="nav-link">FAQ</a></li><li><a href="../contact/" class="nav-link nav-cta">Get In Touch</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+    <section class="page-hero">
+        <div class="page-hero-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
+        <div class="page-hero-content">
+            <div class="breadcrumb anim-fade-down"><a href="../">Home</a><span class="separator">/</span><span class="current">Services</span></div>
+            <h1 class="anim-fade-up">Comprehensive Book Marketing <span class="highlight-gradient">Services</span></h1>
+            <p class="hero-description anim-fade-up delay-1">Every service is custom-tailored to your unique book, genre, audience, goals, and budget. There is no one-size-fits-all approach here. Each strategy is researched, planned, and executed from the ground up for maximum impact. Below is a detailed look at every service I offer.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="services-full-grid">
+
+                <!-- Service 1 -->
+                <div class="service-full">
+                    <div class="service-full-content anim-fade-right">
+                        <div class="service-number">01</div>
+                        <h2>Book Launch <span class="highlight">Campaigns</span></h2>
+                        <p class="service-description">A successful book launch does not happen by accident. It requires months of careful planning, strategic positioning, and coordinated execution across multiple channels. I design and execute comprehensive launch campaigns that build anticipation well before your release date, create a powerful and sustained surge of sales and visibility during launch week, and maintain momentum long after the initial excitement fades. Every launch I manage follows a proven framework refined over 10+ years and dozens of successful launches, while still being customized to your specific book, genre, and target audience.</p>
+                        <ul class="service-features-list">
+                            <li><i data-lucide="check-circle"></i> Pre-launch audience building, buzz generation, and ARC team coordination starting 60 to 90 days before release</li>
+                            <li><i data-lucide="check-circle"></i> Launch week sales surge coordination across all platforms including Amazon, Barnes and Noble, Kobo, and Apple Books</li>
+                            <li><i data-lucide="check-circle"></i> Post-launch sustained visibility strategy including ongoing advertising, email marketing, and social media content</li>
+                            <li><i data-lucide="check-circle"></i> Review generation strategy including Goodreads campaigns, BookBub features, and targeted reviewer outreach</li>
+                            <li><i data-lucide="check-circle"></i> Retailer optimization with A+ Content, editorial reviews, and strategic category and keyword placement</li>
+                            <li><i data-lucide="check-circle"></i> Media and podcast outreach timed to coincide with your launch for maximum publicity impact</li>
+                        </ul>
+                        <a href="../contact/" class="btn btn-primary"><span>Discuss Your Launch</span><i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="service-full-visual anim-fade-left">
+                        <div class="visual-stat-grid">
+                            <div class="visual-stat"><span class="vs-number">60+</span><span class="vs-label">Launches Managed</span></div>
+                            <div class="visual-stat"><span class="vs-number">85%</span><span class="vs-label">Hit Bestseller Lists</span></div>
+                            <div class="visual-stat"><span class="vs-number">4,200</span><span class="vs-label">Avg. First Month Sales</span></div>
+                            <div class="visual-stat"><span class="vs-number">6.2x</span><span class="vs-label">Avg. Launch ROAS</span></div>
+                        </div>
+                        <div class="visual-description"><p>"Author S's debut psychological thriller launch sold 4,200 copies in the first 30 days on a $3,000 budget, achieving USA Today Bestseller status and a 6.8x return on ad spend."</p></div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-full reverse">
+                    <div class="service-full-content anim-fade-left">
+                        <div class="service-number">02</div>
+                        <h2>Social Media <span class="highlight">Marketing</span></h2>
+                        <p class="service-description">Social media is one of the most powerful tools available to authors today, but only when used strategically and consistently. I create and manage social media campaigns that build genuine communities of engaged readers around your work. This is not about posting randomly and hoping for likes. It is about developing a content strategy that resonates with your target readers, drives them to your book's sales page, and turns casual followers into dedicated fans who will buy every book you publish and recommend you to everyone they know.</p>
+                        <ul class="service-features-list">
+                            <li><i data-lucide="check-circle"></i> Platform-specific content strategy for Instagram, TikTok (BookTok), Facebook, Twitter/X, and Pinterest</li>
+                            <li><i data-lucide="check-circle"></i> BookTok and Bookstagram viral content creation and growth campaigns designed for maximum organic reach</li>
+                            <li><i data-lucide="check-circle"></i> Community building through reader engagement, Q&A sessions, behind-the-scenes content, and interactive posts</li>
+                            <li><i data-lucide="check-circle"></i> Paid social advertising management with audience targeting, retargeting, and lookalike audience development</li>
+                            <li><i data-lucide="check-circle"></i> Influencer and BookToker collaboration outreach and partnership management</li>
+                            <li><i data-lucide="check-circle"></i> Monthly analytics reporting with engagement metrics, growth tracking, and content performance analysis</li>
+                        </ul>
+                        <a href="../contact/" class="btn btn-primary"><span>Grow Your Social Presence</span><i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="service-full-visual anim-fade-right">
+                        <div class="visual-stat-grid">
+                            <div class="visual-stat"><span class="vs-number">50K+</span><span class="vs-label">Followers Built</span></div>
+                            <div class="visual-stat"><span class="vs-number">12M+</span><span class="vs-label">Content Impressions</span></div>
+                            <div class="visual-stat"><span class="vs-number">8.5%</span><span class="vs-label">Avg. Engagement Rate</span></div>
+                            <div class="visual-stat"><span class="vs-number">200+</span><span class="vs-label">Influencer Collabs</span></div>
+                        </div>
+                        <div class="visual-description"><p>"Strategic BookTok campaigns have generated millions of views for my clients, with individual videos reaching 500K+ views and driving thousands of direct sales."</p></div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-full">
+                    <div class="service-full-content anim-fade-right">
+                        <div class="service-number">03</div>
+                        <h2>Email Marketing and <span class="highlight">List Building</span></h2>
+                        <p class="service-description">Your email list is the single most valuable marketing asset you can own as an author. Unlike social media followers, your email subscribers are yours. No algorithm can take them away from you. I build, grow, and manage email marketing systems that turn casual readers into devoted fans who eagerly anticipate your next release, buy it on day one, and tell all their friends about it. From creating irresistible lead magnets and optimized signup forms to building sophisticated automated sequences and crafting compelling launch broadcasts, I handle every aspect of your email marketing.</p>
+                        <ul class="service-features-list">
+                            <li><i data-lucide="check-circle"></i> Lead magnet creation including bonus chapters, short stories, character profiles, and exclusive content</li>
+                            <li><i data-lucide="check-circle"></i> Automated welcome sequences that immediately engage new subscribers and build anticipation</li>
+                            <li><i data-lucide="check-circle"></i> Launch broadcast campaigns with countdown sequences, early access offers, and exclusive bonuses</li>
+                            <li><i data-lucide="check-circle"></i> Advanced list segmentation based on reader preferences, purchase history, and engagement levels</li>
+                            <li><i data-lucide="check-circle"></i> A/B testing of subject lines, content formats, send times, and calls to action for maximum performance</li>
+                            <li><i data-lucide="check-circle"></i> Platform setup and management on ConvertKit, Mailchimp, MailerLite, or your preferred provider</li>
+                        </ul>
+                        <a href="../contact/" class="btn btn-primary"><span>Build Your Email List</span><i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="service-full-visual anim-fade-left">
+                        <div class="visual-stat-grid">
+                            <div class="visual-stat"><span class="vs-number">10K+</span><span class="vs-label">Subscribers Built</span></div>
+                            <div class="visual-stat"><span class="vs-number">42%</span><span class="vs-label">Avg. Open Rate</span></div>
+                            <div class="visual-stat"><span class="vs-number">8.5%</span><span class="vs-label">Avg. Click Rate</span></div>
+                            <div class="visual-stat"><span class="vs-number">$4.20</span><span class="vs-label">Revenue Per Subscriber</span></div>
+                        </div>
+                        <div class="visual-description"><p>"Author J's email list grew from zero to 3,800 engaged subscribers in six months, generating consistent monthly sales and a direct revenue channel independent of any retailer."</p></div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-full reverse">
+                    <div class="service-full-content anim-fade-left">
+                        <div class="service-number">04</div>
+                        <h2>Amazon and Retailer <span class="highlight">Advertising</span></h2>
+                        <p class="service-description">Amazon is the world's largest bookstore, and advertising on it effectively requires deep expertise, constant optimization, and a thorough understanding of the platform's unique algorithms, bidding systems, and competitive dynamics. I manage Amazon Sponsored Products, Sponsored Brands, and Lockscreen ads with surgical precision, continuously optimizing keywords, bids, and targeting to maximize your return on every advertising dollar spent. I also run campaigns across BookBub, Facebook, Instagram, Kobo, and Apple Books to ensure your book reaches readers wherever they shop.</p>
+                        <ul class="service-features-list">
+                            <li><i data-lucide="check-circle"></i> Amazon Sponsored Products, Sponsored Brands, and Lockscreen ad campaign management</li>
+                            <li><i data-lucide="check-circle"></i> Deep keyword research using multiple tools and competitive intelligence analysis</li>
+                            <li><i data-lucide="check-circle"></i> BookBub Featured Deal applications and promotion coordination</li>
+                            <li><i data-lucide="check-circle"></i> Facebook and Instagram ad campaigns with custom audience targeting and retargeting pixels</li>
+                            <li><i data-lucide="check-circle"></i> Daily bid optimization, negative keyword management, and budget reallocation</li>
+                            <li><i data-lucide="check-circle"></i> Detailed ROAS tracking, weekly performance reports, and strategic optimization recommendations</li>
+                        </ul>
+                        <a href="../contact/" class="btn btn-primary"><span>Optimize Your Ads</span><i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="service-full-visual anim-fade-right">
+                        <div class="visual-stat-grid">
+                            <div class="visual-stat"><span class="vs-number">$500K+</span><span class="vs-label">Total Ad Spend Managed</span></div>
+                            <div class="visual-stat"><span class="vs-number">4.2x</span><span class="vs-label">Average ROAS</span></div>
+                            <div class="visual-stat"><span class="vs-number">15K+</span><span class="vs-label">Keywords Managed</span></div>
+                            <div class="visual-stat"><span class="vs-number">8.3x</span><span class="vs-label">Best Campaign ROAS</span></div>
+                        </div>
+                        <div class="visual-description"><p>"Author E's Amazon advertising campaign achieved an 8.3x return on ad spend, selling 8,500 copies in two weeks and reaching the number one position in Contemporary Romance."</p></div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-full">
+                    <div class="service-full-content anim-fade-right">
+                        <div class="service-number">05</div>
+                        <h2>Book SEO and <span class="highlight">Metadata Optimization</span></h2>
+                        <p class="service-description">Your book's discoverability on Amazon and other retailers depends heavily on your metadata: your title, subtitle, description, backend keywords, and category selections. I optimize every single element of your book's metadata to ensure it ranks as highly as possible in search results, appears in the most relevant and advantageous categories, and converts browsers into buyers. This is often the highest-ROI activity in all of book marketing, yet most authors overlook it entirely or do it poorly.</p>
+                        <ul class="service-features-list">
+                            <li><i data-lucide="check-circle"></i> Comprehensive keyword research using Publisher Rocket, KDP Rocket, and proprietary tools</li>
+                            <li><i data-lucide="check-circle"></i> BISAC category selection and strategic Amazon browse category optimization</li>
+                            <li><i data-lucide="check-circle"></i> Book description copywriting with conversion-optimized HTML formatting and A+ Content creation</li>
+                            <li><i data-lucide="check-circle"></i> Backend keyword optimization using all seven keyword slots for maximum discoverability</li>
+                            <li><i data-lucide="check-circle"></i> Competitive analysis to identify gaps, opportunities, and positioning advantages in your genre</li>
+                            <li><i data-lucide="check-circle"></i> Ongoing monitoring, refinement, and seasonal adjustments to maintain optimal performance</li>
+                        </ul>
+                        <a href="../contact/" class="btn btn-primary"><span>Optimize Your Metadata</span><i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="service-full-visual anim-fade-left">
+                        <div class="visual-stat-grid">
+                            <div class="visual-stat"><span class="vs-number">340%</span><span class="vs-label">Avg. Visibility Increase</span></div>
+                            <div class="visual-stat"><span class="vs-number">12x</span><span class="vs-label">Highest Organic Boost</span></div>
+                            <div class="visual-stat"><span class="vs-number">100+</span><span class="vs-label">Books Optimized</span></div>
+                            <div class="visual-stat"><span class="vs-number">#1</span><span class="vs-label">Category Rankings</span></div>
+                        </div>
+                        <div class="visual-description"><p>"A single metadata optimization session for Author J's business book resulted in a 340% increase in organic sales within the first month, with zero additional advertising spend required."</p></div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-full reverse">
+                    <div class="service-full-content anim-fade-left">
+                        <div class="service-number">06</div>
+                        <h2>Author PR and <span class="highlight">Media Outreach</span></h2>
+                        <p class="service-description">Getting featured in podcasts, blogs, magazines, newspapers, and online publications is one of the fastest and most credible ways to build your authority as an author and reach entirely new audiences. I leverage my extensive network of media contacts, built and nurtured over 10+ years in the industry, to secure meaningful placements that put you and your book in front of the right people at the right time. Every pitch is carefully crafted to match the outlet's specific audience, editorial style, and content needs.</p>
+                        <ul class="service-features-list">
+                            <li><i data-lucide="check-circle"></i> Podcast booking on genre-relevant and general audience shows with interview preparation and talking points</li>
+                            <li><i data-lucide="check-circle"></i> Blog tour coordination and management with targeted outreach to genre-specific book bloggers</li>
+                            <li><i data-lucide="check-circle"></i> Press release writing, formatting, and distribution to relevant media outlets and industry contacts</li>
+                            <li><i data-lucide="check-circle"></i> Professional media kit creation including author bio, high-resolution photos, book summaries, and press quotes</li>
+                            <li><i data-lucide="check-circle"></i> Ongoing media relationship management and nurturing for long-term publicity opportunities</li>
+                            <li><i data-lucide="check-circle"></i> Award submission research and application management for relevant literary awards and honors</li>
+                        </ul>
+                        <a href="../contact/" class="btn btn-primary"><span>Get Media Coverage</span><i data-lucide="arrow-right"></i></a>
+                    </div>
+                    <div class="service-full-visual anim-fade-right">
+                        <div class="visual-stat-grid">
+                            <div class="visual-stat"><span class="vs-number">500+</span><span class="vs-label">Media Placements</span></div>
+                            <div class="visual-stat"><span class="vs-number">200+</span><span class="vs-label">Podcast Features</span></div>
+                            <div class="visual-stat"><span class="vs-number">150+</span><span class="vs-label">Blog Tour Stops</span></div>
+                            <div class="visual-stat"><span class="vs-number">50+</span><span class="vs-label">Print/Online Features</span></div>
+                        </div>
+                        <div class="visual-description"><p>"A coordinated PR campaign for Author D's fantasy novel resulted in 28 podcast appearances, 15 blog features, and a guest article in a major genre publication, all within a 90 day window."</p></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Philosophy -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Investment</span>
+                <h2 class="section-title">Transparent <span class="highlight">Pricing Philosophy</span></h2>
+                <p class="section-description">I work with a range of budgets and tailor every campaign to maximize impact. Here is a general guide to help you understand what is achievable at different investment levels. Every project receives a custom quote based on your specific needs.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card anim-fade-up">
+                    <h3>Starter</h3>
+                    <span class="price-range">$1K - $3K</span>
+                    <p>Perfect for debut authors with limited budgets who need focused, high-impact marketing on the most essential channels.</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Metadata optimization</li>
+                        <li><i data-lucide="check"></i> Basic Amazon advertising</li>
+                        <li><i data-lucide="check"></i> Book description copywriting</li>
+                        <li><i data-lucide="check"></i> Category research and placement</li>
+                        <li><i data-lucide="check"></i> Weekly email reporting</li>
+                    </ul>
+                </div>
+                <div class="pricing-card anim-fade-up delay-1" style="border-color:rgba(var(--secondary-rgb),0.3);">
+                    <h3>Professional</h3>
+                    <span class="price-range">$3K - $10K</span>
+                    <p>Ideal for authors seeking comprehensive multi-channel marketing with dedicated strategy and ongoing optimization.</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Everything in Starter</li>
+                        <li><i data-lucide="check"></i> Full launch campaign management</li>
+                        <li><i data-lucide="check"></i> Social media strategy and management</li>
+                        <li><i data-lucide="check"></i> Email marketing setup and campaigns</li>
+                        <li><i data-lucide="check"></i> Media and podcast outreach</li>
+                        <li><i data-lucide="check"></i> Bi-weekly detailed reporting</li>
+                    </ul>
+                </div>
+                <div class="pricing-card anim-fade-up delay-2">
+                    <h3>Premium</h3>
+                    <span class="price-range">$10K+</span>
+                    <p>For established authors and high-stakes launches requiring full-service, multi-channel campaigns with maximum resources.</p>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Everything in Professional</li>
+                        <li><i data-lucide="check"></i> Aggressive multi-platform advertising</li>
+                        <li><i data-lucide="check"></i> Influencer partnership campaigns</li>
+                        <li><i data-lucide="check"></i> Full PR and media campaign</li>
+                        <li><i data-lucide="check"></i> Backlist integration strategy</li>
+                        <li><i data-lucide="check"></i> Priority response and support</li>
+                        <li><i data-lucide="check"></i> Quarterly strategy reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Ready to Get Started With a <span class="highlight-gradient">Custom Strategy?</span></h2>
+                <p>Every project begins with a free, no-obligation consultation via email. Tell me about your book, and I will respond with an honest assessment and recommended next steps.</p>
+                <a href="../contact/" class="btn btn-primary btn-large"><span>Start Your Campaign</span><i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="footer-logo"><p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../">Home</a></li><li><a href="../about/">About</a></li><li><a href="../services/">Services</a></li><li><a href="../process/">Process</a></li><li><a href="../results/">Results</a></li><li><a href="../testimonials/">Testimonials</a></li><li><a href="../faq/">FAQ</a></li><li><a href="../contact/">Contact</a></li></ul></div><div class="footer-links"><h4>Services</h4><ul><li><a href="../services/">Book Launch Campaigns</a></li><li><a href="../services/">Social Media Marketing</a></li><li><a href="../services/">Email Marketing</a></li><li><a href="../services/">Amazon Advertising</a></li><li><a href="../services/">Book SEO</a></li><li><a href="../services/">Author PR</a></li></ul></div><div class="footer-contact"><h4>Get In Touch</h4><a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a><div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div></div></div><div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p><div class="footer-bottom-links"><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></div></div></div></footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+    <script src="../script.js"></script>
+</body>
+</html>

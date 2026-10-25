@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Case Studies | Tom Umar - Book Marketing Specialist Expert</title>
+    <meta name="description" content="Proven results from 10+ years of book marketing. Over 1,000,000 copies sold, 50+ bestselling authors, 4.2x average ROAS. View detailed case studies.">
+    <link rel="icon" type="image/png" href="../images/tom-umar-logo.png">
+    <link rel="apple-touch-icon" href="../images/tom-umar-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .mega-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        .mega-stat {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            padding: 48px 36px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .mega-stat:hover {
+            background: rgba(var(--secondary-rgb), 0.06);
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-6px);
+        }
+
+        .mega-stat-number {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .mega-stat-label {
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+
+        /* Case Studies */
+        .case-study-full {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            padding: 56px;
+            margin-bottom: 40px;
+            transition: var(--transition);
+        }
+
+        .case-study-full:hover {
+            border-color: rgba(var(--secondary-rgb), 0.2);
+        }
+
+        .case-study-full:last-child { margin-bottom: 0; }
+
+        .case-header {
+            margin-bottom: 36px;
+        }
+
+        .case-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            background: rgba(var(--secondary-rgb), 0.15);
+            color: var(--secondary);
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .case-header h3 {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .case-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .case-meta-item {
+            padding: 20px;
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius-md);
+        }
+
+        .case-meta-label {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 6px;
+        }
+
+        .case-meta-value {
+            display: block;
+            font-weight: 600;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .case-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px;
+        }
+
+        .case-body h4 {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 14px;
+        }
+
+        .case-body p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.85;
+        }
+
+        .case-body ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .case-body ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .case-body ul li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .case-results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .case-result {
+            background: rgba(var(--secondary-rgb), 0.08);
+            border: 1px solid rgba(var(--secondary-rgb), 0.15);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .case-result:hover {
+            transform: translateY(-4px);
+            background: rgba(var(--secondary-rgb), 0.12);
+        }
+
+        .case-result-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 6px;
+        }
+
+        .case-result-label {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 1024px) {
+            .mega-stats { grid-template-columns: repeat(2, 1fr); }
+            .case-meta { grid-template-columns: repeat(2, 1fr); }
+            .case-body { grid-template-columns: 1fr; }
+            .case-results-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .case-study-full { padding: 32px; }
+            .case-results-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .mega-stats { grid-template-columns: 1fr; }
+            .case-study-full { padding: 24px; }
+            .case-meta { grid-template-columns: 1fr; }
+            .case-results-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+    <div id="preloader"><div class="preloader-inner"><div class="preloader-logo">T</div><div class="preloader-text">Tom Umar</div><div class="preloader-bar"><div class="preloader-fill"></div></div></div></div>
+    <div class="cursor-dot"></div><div class="cursor-ring"></div><div class="nav-overlay" id="navOverlay"></div>
+
+    <nav class="navbar" id="navbar"><div class="nav-container"><a href="../" class="nav-logo"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="logo-img"></a><ul class="nav-menu" id="navMenu"><li><a href="../" class="nav-link">Home</a></li><li><a href="../about/" class="nav-link">About</a></li><li><a href="../services/" class="nav-link">Services</a></li><li><a href="../process/" class="nav-link">Process</a></li><li><a href="../results/" class="nav-link active">Results</a></li><li><a href="../testimonials/" class="nav-link">Testimonials</a></li><li><a href="../faq/" class="nav-link">FAQ</a></li><li><a href="../contact/" class="nav-link nav-cta">Get In Touch</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+    <section class="page-hero">
+        <div class="page-hero-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
+        <div class="page-hero-content">
+            <div class="breadcrumb anim-fade-down"><a href="../">Home</a><span class="separator">/</span><span class="current">Results</span></div>
+            <h1 class="anim-fade-up">Real Numbers, Real <span class="highlight-gradient">Success Stories</span></h1>
+            <p class="hero-description anim-fade-up delay-1">Numbers do not lie. Below you will find aggregate statistics from over a decade of book marketing work, followed by detailed case studies from recent campaigns. All client identities are kept confidential to respect their privacy.</p>
+        </div>
+    </section>
+
+    <!-- Mega Stats -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Aggregate Results</span>
+                <h2 class="section-title">10+ Years of <span class="highlight">Proven Performance</span></h2>
+            </div>
+
+            <div class="mega-stats">
+                <div class="mega-stat anim-fade-up">
+                    <div class="mega-stat-number"><span data-counter="1000000" data-suffix="+">0</span></div>
+                    <div class="mega-stat-label">Total Copies Sold Across All Campaigns</div>
+                </div>
+                <div class="mega-stat anim-fade-up delay-1">
+                    <div class="mega-stat-number"><span data-counter="50" data-suffix="+">0</span></div>
+                    <div class="mega-stat-label">Bestselling Authors Created</div>
+                </div>
+                <div class="mega-stat anim-fade-up delay-2">
+                    <div class="mega-stat-number"><span data-counter="500000" data-prefix="$" data-suffix="+">0</span></div>
+                    <div class="mega-stat-label">Total Advertising Spend Managed</div>
+                </div>
+                <div class="mega-stat anim-fade-up">
+                    <div class="mega-stat-number"><span data-counter="4" data-decimals="1" data-suffix="x">0</span></div>
+                    <div class="mega-stat-label">Average Return on Ad Spend</div>
+                </div>
+                <div class="mega-stat anim-fade-up delay-1">
+                    <div class="mega-stat-number"><span data-counter="10000" data-suffix="+">0</span></div>
+                    <div class="mega-stat-label">Email Subscribers Generated for Authors</div>
+                </div>
+                <div class="mega-stat anim-fade-up delay-2">
+                    <div class="mega-stat-number"><span data-counter="98" data-suffix="%">0</span></div>
+                    <div class="mega-stat-label">Client Satisfaction Rate</div>
+                </div>
+            </div>
+
+            <!-- Case Study 1 -->
+            <h3 style="font-size:1.8rem;color:var(--white);text-align:center;margin-bottom:48px;font-family:var(--font-heading);" class="anim-fade-up">Detailed Case Studies</h3>
+
+            <div class="case-study-full anim-fade-up">
+                <div class="case-header">
+                    <div class="case-badge">Case Study 01</div>
+                    <h3>Author S: Debut Psychological Thriller</h3>
+                </div>
+                <div class="case-meta">
+                    <div class="case-meta-item"><span class="case-meta-label">Genre</span><span class="case-meta-value">Psychological Thriller</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Publishing Path</span><span class="case-meta-value">Self-Published</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Starting Budget</span><span class="case-meta-value">$3,000</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Campaign Duration</span><span class="case-meta-value">90 Days</span></div>
+                </div>
+                <div class="case-body">
+                    <div>
+                        <h4>The Challenge</h4>
+                        <p>Author S came to me with a completed debut novel and absolutely no existing audience, no email list, no social media following, and no industry connections. The psychological thriller market is extremely competitive, with thousands of new titles launching every month. Author S had a limited budget of $3,000 for the entire marketing campaign. The goal was ambitious but clear: achieve bestseller status and build a foundation for a long-term author career.</p>
+                    </div>
+                    <div>
+                        <h4>The Strategy</h4>
+                        <ul>
+                            <li><i data-lucide="check"></i> Complete metadata overhaul with optimized keywords and strategic category placement</li>
+                            <li><i data-lucide="check"></i> Targeted Amazon Sponsored Products campaign focusing on comp author keywords</li>
+                            <li><i data-lucide="check"></i> BookTok influencer outreach campaign with 15 targeted creators in the thriller niche</li>
+                            <li><i data-lucide="check"></i> ARC team of 50 readers coordinated for launch week review surge</li>
+                            <li><i data-lucide="check"></i> Email list built from scratch using a free prequel short story as lead magnet</li>
+                            <li><i data-lucide="check"></i> Coordinated launch week pricing strategy with BookBub submission</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="case-results-grid">
+                    <div class="case-result"><span class="case-result-number">4,200</span><span class="case-result-label">Copies Sold in 30 Days</span></div>
+                    <div class="case-result"><span class="case-result-number">USA Today</span><span class="case-result-label">Bestseller List Achieved</span></div>
+                    <div class="case-result"><span class="case-result-number">6.8x</span><span class="case-result-label">Return on Ad Spend</span></div>
+                    <div class="case-result"><span class="case-result-number">2,100</span><span class="case-result-label">Email Subscribers Built</span></div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="case-study-full anim-fade-up">
+                <div class="case-header">
+                    <div class="case-badge">Case Study 02</div>
+                    <h3>Author J: Business and Productivity Non-Fiction</h3>
+                </div>
+                <div class="case-meta">
+                    <div class="case-meta-item"><span class="case-meta-label">Genre</span><span class="case-meta-value">Business / Productivity</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Publishing Path</span><span class="case-meta-value">Hybrid Published</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Starting Budget</span><span class="case-meta-value">$5,000</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Campaign Duration</span><span class="case-meta-value">6 Months</span></div>
+                </div>
+                <div class="case-body">
+                    <div>
+                        <h4>The Challenge</h4>
+                        <p>Author J had published a business book through a hybrid publisher but sales had plateaued at approximately 50 copies per month after an underwhelming launch. The book had strong content and excellent reviews, but it was invisible in a crowded market. Author J needed a strategy to dramatically increase visibility and establish long-term, sustainable sales growth rather than another short-lived sales spike.</p>
+                    </div>
+                    <div>
+                        <h4>The Strategy</h4>
+                        <ul>
+                            <li><i data-lucide="check"></i> Complete metadata overhaul resulting in immediate organic visibility improvements</li>
+                            <li><i data-lucide="check"></i> Amazon advertising campaign with deep keyword research targeting business readers</li>
+                            <li><i data-lucide="check"></i> LinkedIn content strategy positioning Author J as a thought leader in the productivity space</li>
+                            <li><i data-lucide="check"></i> Email list building with a free productivity toolkit as lead magnet</li>
+                            <li><i data-lucide="check"></i> Podcast outreach campaign targeting 40+ business and productivity shows</li>
+                            <li><i data-lucide="check"></i> Monthly A/B testing on ad creatives, email subjects, and landing page copy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="case-results-grid">
+                    <div class="case-result"><span class="case-result-number">340%</span><span class="case-result-label">Sales Increase Over 6 Months</span></div>
+                    <div class="case-result"><span class="case-result-number">220</span><span class="case-result-label">Monthly Sales (Up From 50)</span></div>
+                    <div class="case-result"><span class="case-result-number">5.1x</span><span class="case-result-label">Return on Ad Spend</span></div>
+                    <div class="case-result"><span class="case-result-number">3,800</span><span class="case-result-label">Email Subscribers Generated</span></div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="case-study-full anim-fade-up">
+                <div class="case-header">
+                    <div class="case-badge">Case Study 03</div>
+                    <h3>Author E: Contemporary Romance Series</h3>
+                </div>
+                <div class="case-meta">
+                    <div class="case-meta-item"><span class="case-meta-label">Genre</span><span class="case-meta-value">Contemporary Romance</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Publishing Path</span><span class="case-meta-value">Traditionally Published</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Starting Budget</span><span class="case-meta-value">$8,000</span></div>
+                    <div class="case-meta-item"><span class="case-meta-label">Campaign Duration</span><span class="case-meta-value">4 Months</span></div>
+                </div>
+                <div class="case-body">
+                    <div>
+                        <h4>The Challenge</h4>
+                        <p>Author E was an established traditionally published romance author with 12 backlist titles, but a new release was underperforming compared to previous books. The publisher's marketing support was minimal, and Author E needed an independent marketing strategy to revitalize both the new release and the entire backlist catalog. The ambitious goal was to achieve a number one ranking in the Contemporary Romance category on Amazon.</p>
+                    </div>
+                    <div>
+                        <h4>The Strategy</h4>
+                        <ul>
+                            <li><i data-lucide="check"></i> Aggressive Amazon advertising campaign across Sponsored Products and Lockscreen</li>
+                            <li><i data-lucide="check"></i> BookTok and Bookstagram influencer partnerships with 25 romance content creators</li>
+                            <li><i data-lucide="check"></i> Backlist cross-promotion strategy linking all 12 titles in a discovery funnel</li>
+                            <li><i data-lucide="check"></i> Email marketing campaign to existing reader base with exclusive content and bonuses</li>
+                            <li><i data-lucide="check"></i> BookBub Featured Deal secured for the new release</li>
+                            <li><i data-lucide="check"></i> Blog tour with 20 romance-focused book bloggers and reviewers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="case-results-grid">
+                    <div class="case-result"><span class="case-result-number">8,500</span><span class="case-result-label">Copies Sold in 2 Weeks</span></div>
+                    <div class="case-result"><span class="case-result-number">#1</span><span class="case-result-label">Contemporary Romance Ranking</span></div>
+                    <div class="case-result"><span class="case-result-number">8.3x</span><span class="case-result-label">Return on Ad Spend</span></div>
+                    <div class="case-result"><span class="case-result-number">45%</span><span class="case-result-label">Backlist Sales Increase</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Want Results Like These for <span class="highlight-gradient">Your Book?</span></h2>
+                <p>Every campaign starts with understanding your unique situation. Email me your book details and goals, and I will provide a free, no-obligation assessment of how I can help.</p>
+                <a href="../contact/" class="btn btn-primary btn-large"><span>Start Your Success Story</span><i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="footer-logo"><p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../">Home</a></li><li><a href="../about/">About</a></li><li><a href="../services/">Services</a></li><li><a href="../process/">Process</a></li><li><a href="../results/">Results</a></li><li><a href="../testimonials/">Testimonials</a></li><li><a href="../faq/">FAQ</a></li><li><a href="../contact/">Contact</a></li></ul></div><div class="footer-links"><h4>Services</h4><ul><li><a href="../services/">Book Launch Campaigns</a></li><li><a href="../services/">Social Media Marketing</a></li><li><a href="../services/">Email Marketing</a></li><li><a href="../services/">Amazon Advertising</a></li><li><a href="../services/">Book SEO</a></li><li><a href="../services/">Author PR</a></li></ul></div><div class="footer-contact"><h4>Get In Touch</h4><a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a><div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div></div></div><div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p><div class="footer-bottom-links"><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></div></div></div></footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+    <script src="../script.js"></script>
+</body>
+</html>

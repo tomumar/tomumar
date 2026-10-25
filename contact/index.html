@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Tom Umar | Book Marketing Specialist Expert</title>
+    <meta name="description" content="Get in touch with Tom Umar, Book Marketing Specialist Expert. Email hello.tomumar@gmail.com or use the contact form to start your book marketing journey.">
+    <link rel="icon" type="image/png" href="../images/tom-umar-logo.png">
+    <link rel="apple-touch-icon" href="../images/tom-umar-logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* ===== CONTACT PAGE SPECIFIC STYLES ===== */
+
+        .contact-main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Left Column - Info Panel */
+        .contact-info-panel {
+            position: sticky;
+            top: 100px;
+        }
+
+        .contact-info-card {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 52px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 28px;
+        }
+
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-info-card h2 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info-card > p {
+            color: rgba(255,255,255,0.55);
+            line-height: 1.85;
+            margin-bottom: 40px;
+            font-size: 0.98rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .contact-method-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(var(--secondary-rgb), 0.12);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-method-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+        }
+
+        .contact-method-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 4px;
+        }
+
+        .contact-method-value {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.98rem;
+        }
+
+        .contact-method-value a {
+            color: var(--secondary);
+        }
+
+        .contact-method-value a:hover {
+            color: var(--secondary-light);
+        }
+
+        .contact-comm-note {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-comm-note h4 {
+            color: var(--secondary);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-family: var(--font-heading);
+        }
+
+        .contact-comm-note p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.88rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* What to Include Card */
+        .what-to-include-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+        }
+
+        .what-to-include-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 24px;
+        }
+
+        .include-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .include-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .include-list li svg {
+            width: 20px;
+            height: 20px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .include-list li strong {
+            color: var(--text);
+        }
+
+        /* Right Column - Form */
+        .contact-form-container {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: 56px;
+        }
+
+        .contact-form-container h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-form-container > p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        .form-section-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            margin-top: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .btn-submit {
+            margin-top: 8px;
+        }
+
+        /* Response Time Banner */
+        .response-banner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg, var(--cream), var(--gray-100));
+            border: 1px solid rgba(var(--secondary-rgb), 0.15);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            margin-top: 40px;
+        }
+
+        .response-banner-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .response-banner-icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--primary);
+        }
+
+        .response-banner h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .response-banner p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Process Summary */
+        .contact-process {
+            margin-top: var(--section-padding);
+        }
+
+        .process-steps-horizontal {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-top: 56px;
+        }
+
+        .process-step-h {
+            text-align: center;
+            padding: 32px 20px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .process-step-h:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(var(--secondary-rgb), 0.15);
+        }
+
+        .process-step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .process-step-h h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .process-step-h p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* FAQ Preview */
+        .contact-faq {
+            margin-top: var(--section-padding);
+        }
+
+        .contact-faq .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .contact-faq .faq-item:hover {
+            border-color: rgba(var(--secondary-rgb), 0.15);
+        }
+
+        .contact-faq .faq-item.active {
+            border-color: rgba(var(--secondary-rgb), 0.25);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-faq .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 28px;
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--text);
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .contact-faq .faq-question:hover {
+            color: var(--secondary-dark);
+        }
+
+        .contact-faq .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            transition: transform var(--transition);
+        }
+
+        .contact-faq .faq-item.active .faq-question svg {
+            transform: rotate(45deg);
+        }
+
+        .contact-faq .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s var(--ease-out), padding 0.5s var(--ease-out);
+            padding: 0 28px;
+        }
+
+        .contact-faq .faq-item.active .faq-answer {
+            max-height: 400px;
+            padding: 0 28px 24px;
+        }
+
+        .contact-faq .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.85;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-main-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-info-panel {
+                position: static;
+            }
+
+            .process-steps-horizontal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-info-card {
+                padding: 36px;
+            }
+
+            .contact-form-container {
+                padding: 32px;
+            }
+
+            .process-steps-horizontal {
+                grid-template-columns: 1fr;
+            }
+
+            .response-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-info-card {
+                padding: 28px;
+            }
+
+            .contact-form-container {
+                padding: 24px;
+                border: none;
+                background: var(--gray-50);
+            }
+
+            .what-to-include-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">T</div>
+            <div class="preloader-text">Tom Umar</div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../images/tom-umar-logo.png" alt="Tom Umar - Book Marketing Specialist Expert" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../" class="nav-link">Home</a></li>
+                <li><a href="../about/" class="nav-link">About</a></li>
+                <li><a href="../services/" class="nav-link">Services</a></li>
+                <li><a href="../process/" class="nav-link">Process</a></li>
+                <li><a href="../results/" class="nav-link">Results</a></li>
+                <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+                <li><a href="../faq/" class="nav-link">FAQ</a></li>
+                <li><a href="../contact/" class="nav-link nav-cta active">Get In Touch</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="page-hero-content">
+            <div class="breadcrumb anim-fade-down">
+                <a href="../">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Contact</span>
+            </div>
+            <h1 class="anim-fade-up">Let's Start Your <span class="highlight-gradient">Success Story</span></h1>
+            <p class="hero-description anim-fade-up delay-1">
+                Ready to market your book with a proven, strategic approach? Fill out the form below with as much detail as possible, and I will respond with a thoughtful, personalized assessment of how I can help you achieve your goals. Every message is read carefully and responded to personally within 24 to 48 hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-main-grid">
+
+                <!-- Left Column -->
+                <div class="contact-info-panel anim-fade-right">
+                    <div class="contact-info-card">
+                        <h2>Get In Touch</h2>
+                        <p>I look forward to learning about your book and exploring how we can work together. Whether you are a debut author or an established name looking for fresh marketing strategies, I am here to help you reach your full potential in the marketplace.</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <span class="contact-method-label">Email (Preferred)</span>
+                                    <span class="contact-method-value"><a href="mailto:hello.tomumar@gmail.com">hello.tomumar@gmail.com</a></span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i data-lucide="clock"></i></div>
+                                <div>
+                                    <span class="contact-method-label">Response Time</span>
+                                    <span class="contact-method-value">Within 24 to 48 hours</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i data-lucide="file-text"></i></div>
+                                <div>
+                                    <span class="contact-method-label">Communication Style</span>
+                                    <span class="contact-method-value">Email-first, documented</span>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-method-icon"><i data-lucide="phone"></i></div>
+                                <div>
+                                    <span class="contact-method-label">Phone / Video Calls</span>
+                                    <span class="contact-method-value">Scheduled on particular occasions</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-comm-note">
+                            <h4>Why Email-First?</h4>
+                            <p>All communication is conducted primarily through email to ensure that every strategy discussion, recommendation, and decision is fully documented, underlined, and recorded for future reference. This approach provides complete transparency and accountability for both of us throughout our working relationship.</p>
+                        </div>
+                    </div>
+
+                    <div class="what-to-include-card">
+                        <h3>What to Include in Your Message</h3>
+                        <p style="margin-bottom:24px;font-size:0.92rem;color:var(--text-light);">The more detail you provide, the more helpful and specific my initial response will be. Here is what I would love to know:</p>
+                        <ul class="include-list">
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Your book's title and genre</strong> so I can begin researching the competitive landscape immediately.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Your publishing status</strong> including whether you are traditionally published, self-published, hybrid, or still in the writing/planning stage.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Your primary marketing goals</strong> such as hitting a bestseller list, increasing monthly sales, building an email list, or launching a new release.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Your approximate budget range</strong> so I can tailor my recommendations to strategies that make financial sense for your situation.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Any previous marketing efforts</strong> including what you have tried before, what worked, and what did not. This helps me avoid repeating past mistakes.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Your timeline and urgency</strong> including any upcoming release dates, promotional events, or deadlines you are working toward.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>Your existing platform</strong> including social media following, email list size, website traffic, and any other marketing assets you already have in place.</div>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle"></i>
+                                <div><strong>What success looks like to you</strong> because every author defines success differently, and I want to make sure my strategy aligns with your personal vision.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column - Form -->
+                <div class="anim-fade-left">
+                    <div class="contact-form-container">
+                        <h2>Send Me a Message</h2>
+                        <p>Complete the form below and I will get back to you with a personalized assessment. Fields marked with * are required.</p>
+
+                        <form action="https://formspree.io/f/mgaaovjj" method="POST" id="contactForm">
+
+                            <div class="form-section-title">Your Information</div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">About Your Book</div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bookTitle">Book Title</label>
+                                    <input type="text" id="bookTitle" name="book_title" placeholder="Your book's title (or working title)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="genre">Genre</label>
+                                    <input type="text" id="genre" name="genre" placeholder="e.g., Thriller, Romance, Self-Help, Fantasy">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pubStatus">Publishing Status</label>
+                                    <select id="pubStatus" name="publishing_status">
+                                        <option value="" disabled selected>Select your status</option>
+                                        <option value="Published - Needs Marketing">Published - Needs Marketing</option>
+                                        <option value="Publishing Soon - Pre-Launch">Publishing Soon - Pre-Launch</option>
+                                        <option value="Currently Writing">Currently Writing</option>
+                                        <option value="Planning Stage">Planning Stage</option>
+                                        <option value="Backlist Revitalization">Backlist Revitalization</option>
+                                        <option value="Series Launch">Series Launch</option>
+                                        <option value="Re-Launch / Rebrand">Re-Launch / Rebrand</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pubPath">Publishing Path</label>
+                                    <select id="pubPath" name="publishing_path">
+                                        <option value="" disabled selected>Select your path</option>
+                                        <option value="Self-Published">Self-Published</option>
+                                        <option value="Traditionally Published">Traditionally Published</option>
+                                        <option value="Hybrid Published">Hybrid Published</option>
+                                        <option value="Not Yet Decided">Not Yet Decided</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">Marketing Details</div>
+
+                            <div class="form-group">
+                                <label for="challenge">Primary Marketing Challenge</label>
+                                <select id="challenge" name="marketing_challenge">
+                                    <option value="" disabled selected>What is your biggest challenge?</option>
+                                    <option value="No existing audience or platform">No existing audience or platform</option>
+                                    <option value="Low book sales / stalled growth">Low book sales / stalled growth</option>
+                                    <option value="Need a comprehensive launch strategy">Need a comprehensive launch strategy</option>
+                                    <option value="Not sure where to spend marketing budget">Not sure where to spend marketing budget</option>
+                                    <option value="Want to build an email list">Want to build an email list</option>
+                                    <option value="Need help with Amazon advertising">Need help with Amazon advertising</option>
+                                    <option value="Want more media and podcast coverage">Want more media and podcast coverage</option>
+                                    <option value="Need social media strategy">Need social media strategy</option>
+                                    <option value="Backlist titles need revitalization">Backlist titles need revitalization</option>
+                                    <option value="Multiple challenges / need full audit">Multiple challenges / need full audit</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="budget">Budget Range</label>
+                                    <select id="budget" name="budget_range">
+                                        <option value="" disabled selected>Select your budget</option>
+                                        <option value="Under $1,000">Under $1,000</option>
+                                        <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+                                        <option value="$3,000 - $5,000">$3,000 - $5,000</option>
+                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                        <option value="$10,000 - $20,000">$10,000 - $20,000</option>
+                                        <option value="$20,000+">$20,000+</option>
+                                        <option value="Flexible / Not sure yet">Flexible / Not sure yet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="timeline">Timeline</label>
+                                    <select id="timeline" name="timeline">
+                                        <option value="" disabled selected>When do you need to start?</option>
+                                        <option value="Immediately / ASAP">Immediately / ASAP</option>
+                                        <option value="Within 2 weeks">Within 2 weeks</option>
+                                        <option value="Within 1 month">Within 1 month</option>
+                                        <option value="Within 2-3 months">Within 2-3 months</option>
+                                        <option value="3+ months from now">3+ months from now</option>
+                                        <option value="Just exploring options">Just exploring options</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hearAbout">How Did You Hear About Me?</label>
+                                <select id="hearAbout" name="referral_source">
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Google Search">Google Search</option>
+                                    <option value="Social Media">Social Media</option>
+                                    <option value="Referral from another author">Referral from another author</option>
+                                    <option value="Podcast / Interview">Podcast / Interview</option>
+                                    <option value="Blog / Article">Blog / Article</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-section-title">Your Message</div>
+
+                            <div class="form-group">
+                                <label for="message">Tell Me About Your Project <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="8" placeholder="Please share as much detail as you can about your book, your goals, your current situation, and what you are hoping to achieve through marketing. The more information you provide here, the more specific and helpful my initial response will be. I read every message carefully and personally." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full btn-submit">
+                                <span>Send Message</span>
+                                <i data-lucide="send"></i>
+                            </button>
+
+                            <p class="form-note">
+                                <i data-lucide="lock"></i>
+                                Your information is kept completely confidential and will never be shared with any third parties. I respect your privacy.
+                            </p>
+                        </form>
+                    </div>
+
+                    <div class="response-banner">
+                        <div class="response-banner-icon">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div>
+                            <h4>Quick Response Guaranteed</h4>
+                            <p>I personally read and respond to every single inquiry within 24 to 48 hours. Your message will never be handled by an assistant or automated system. You will always receive a thoughtful, personalized response directly from me.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens After You Reach Out -->
+    <section class="section section-alt contact-process">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">What Happens Next</span>
+                <h2 class="section-title">After You <span class="highlight">Reach Out</span></h2>
+                <p class="section-description">Here is exactly what to expect once you submit the contact form or send me an email. No surprises, no hidden steps, just a clear and professional process from start to finish.</p>
+            </div>
+
+            <div class="process-steps-horizontal">
+                <div class="process-step-h anim-fade-up">
+                    <div class="process-step-number">01</div>
+                    <h4>I Review Your Message</h4>
+                    <p>I personally read your submission carefully, research your genre and market, and begin formulating an initial assessment of your situation and opportunities.</p>
+                </div>
+                <div class="process-step-h anim-fade-up delay-1">
+                    <div class="process-step-number">02</div>
+                    <h4>Personalized Response</h4>
+                    <p>Within 24 to 48 hours, you receive a detailed email with my initial thoughts, recommended strategies, and any follow-up questions I need answered to proceed.</p>
+                </div>
+                <div class="process-step-h anim-fade-up delay-2">
+                    <div class="process-step-number">03</div>
+                    <h4>Discovery Phase</h4>
+                    <p>We exchange detailed emails about your goals, budget, and vision. I conduct thorough market research and competitive analysis specific to your book and genre.</p>
+                </div>
+                <div class="process-step-h anim-fade-up delay-3">
+                    <div class="process-step-number">04</div>
+                    <h4>Strategy Proposal</h4>
+                    <p>I deliver a comprehensive, custom strategy document outlining every channel, tactic, timeline, and expected outcome. You approve it, and we begin execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact FAQ -->
+    <section class="section contact-faq">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Quick Answers</span>
+                <h2 class="section-title">Common <span class="highlight">Questions</span> About Working Together</h2>
+            </div>
+
+            <div style="max-width:850px;margin:0 auto;">
+                <div class="faq-item anim-fade-up">
+                    <button class="faq-question">
+                        <span>Is there any obligation when I fill out the contact form?</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely not. Filling out the contact form or sending me an email is completely free and carries no obligation whatsoever. I am happy to answer preliminary questions and provide an initial assessment before you make any decision. There is zero pressure at any point in the process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item anim-fade-up">
+                    <button class="faq-question">
+                        <span>How quickly will I hear back from you?</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I respond to every inquiry within 24 to 48 hours. Most messages receive a response within 24 hours. Every response is personally crafted by me. I do not use templates, assistants, or automated replies. You will receive a thoughtful, detailed message that addresses your specific situation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item anim-fade-up">
+                    <button class="faq-question">
+                        <span>Why do you communicate primarily through email?</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Email-first communication ensures that every discussion, recommendation, decision, and report is documented in writing and available for reference at any time. This provides complete transparency and accountability. Phone and video calls are available and scheduled on particular occasions when real-time conversation adds genuine value.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item anim-fade-up">
+                    <button class="faq-question">
+                        <span>Can I schedule a phone or video call instead?</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Phone and video calls are available for particular occasions where live conversation is genuinely beneficial, such as complex strategy discussions, campaign kick-off meetings, or milestone reviews. However, our initial exchange will begin via email so that everything is properly documented from the very start of our working relationship.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item anim-fade-up">
+                    <button class="faq-question">
+                        <span>What if my book has already been published?</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That is perfectly fine and actually very common. Many of my clients come to me with books that have already been published but are underperforming or have stalled in sales. Revitalizing existing titles is one of my specialties. Some of my most successful campaigns have been for books published months or even years before the client contacted me.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item anim-fade-up">
+                    <button class="faq-question">
+                        <span>Do you work with authors outside of specific genres?</span>
+                        <i data-lucide="plus"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Over my 10+ year career, I have worked across more than 15 genres including thriller, romance, science fiction, fantasy, literary fiction, memoir, self-help, business, health, children's books, young adult, historical fiction, horror, poetry, and more. My data-driven approach means I can develop effective strategies for virtually any genre or niche.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Still Have Questions? <span class="highlight-gradient">Just Ask.</span></h2>
+                <p>If you are not ready to fill out the full form, you can simply send a quick email to hello.tomumar@gmail.com with any questions you have. I am always happy to help, and there is never any obligation.</p>
+                <a href="mailto:hello.tomumar@gmail.com" class="btn btn-primary btn-large">
+                    <span>Email Me Directly</span>
+                    <i data-lucide="mail"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/tom-umar-logo.png" alt="Tom Umar Logo" class="footer-logo">
+                    <p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results. Every campaign is built on data, driven by strategy, and documented through transparent email-first communication.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../about/">About</a></li>
+                        <li><a href="../services/">Services</a></li>
+                        <li><a href="../process/">Process</a></li>
+                        <li><a href="../results/">Results</a></li>
+                        <li><a href="../testimonials/">Testimonials</a></li>
+                        <li><a href="../faq/">FAQ</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/">Book Launch Campaigns</a></li>
+                        <li><a href="../services/">Social Media Marketing</a></li>
+                        <li><a href="../services/">Email Marketing</a></li>
+                        <li><a href="../services/">Amazon Advertising</a></li>
+                        <li><a href="../services/">Book SEO</a></li>
+                        <li><a href="../services/">Author PR and Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <a href="mailto:hello.tomumar@gmail.com" class="footer-email">
+                        <i data-lucide="mail"></i> hello.tomumar@gmail.com
+                    </a>
+                    <div class="footer-comm-note">
+                        Email-first communication. All discussions documented and recorded. Calls scheduled on particular occasions only.
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved. Book Marketing Specialist Expert.</p>
+                <div class="footer-bottom-links">
+                    <a href="../contact/">Contact</a>
+                    <a href="../faq/">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+    <script src="../script.js"></script>
+</body>
+</html>

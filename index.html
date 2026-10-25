@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Umar | Book Marketing Specialist Expert | 10+ Years of Results</title>
+    <meta name="description" content="Tom Umar is a Book Marketing Specialist Expert with over 10 years of experience. Proven strategies that have sold over 1,000,000 copies and created 50+ bestselling authors.">
+    <meta name="keywords" content="book marketing, book marketing specialist, book launch strategy, amazon book advertising, author marketing, book promotion expert, Tom Umar">
+    
+    <link rel="icon" type="image/png" href="images/Tom%20Umar.png">
+    <link rel="apple-touch-icon" href="images/Tom%20Umar.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== PRELOADER FAIL-SAFE ===== */
+        #preloader {
+            animation: autoDismissPreloader 0.5s ease 1.8s forwards;
+        }
+        @keyframes autoDismissPreloader {
+            to {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+        body.no-scroll {
+            animation: autoEnableScroll 0.1s linear 1.8s forwards;
+        }
+        @keyframes autoEnableScroll {
+            to {
+                overflow: visible !important;
+            }
+        }
+
+        /* ===== LOGO FIX ===== */
+        .logo-img {
+            max-height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* ===== HERO TITLE COLOR FIX ===== */
+        .home-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            font-weight: 700;
+            line-height: 1.08;
+            margin-bottom: 28px;
+            letter-spacing: -0.025em;
+            color: #ffffff !important; /* FIXED: Explicit white heading text */
+        }
+
+        /* Hero Container */
+        .home-hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(160deg, var(--primary) 0%, #121218 40%, #0d0d14 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            padding: 140px 0 100px;
+        }
+
+        .home-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .home-hero .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 26px;
+            background: rgba(var(--secondary-rgb), 0.1);
+            border: 1px solid rgba(var(--secondary-rgb), 0.2);
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--secondary);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+        }
+
+        .home-hero .hero-subtitle {
+            font-size: clamp(1rem, 1.8vw, 1.15rem);
+            color: rgba(255,255,255,0.7) !important;
+            max-width: 740px;
+            margin: 0 auto 44px;
+            line-height: 1.85;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 72px;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--secondary);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            display: block;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 8px;
+        }
+
+        .hero-stat-divider {
+            width: 1px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            padding-top: 8px;
+        }
+
+        .wheel {
+            width: 3px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 3px;
+            animation: scrollWheel 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollWheel {
+            0%, 100% { opacity: 1; transform: translateY(0); }
+            50% { opacity: 0.2; transform: translateY(10px); }
+        }
+
+        /* Home Intro */
+        .home-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .intro-content p {
+            font-size: 1.02rem;
+        }
+
+        .intro-content .lead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .intro-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 36px;
+        }
+
+        .intro-highlight-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .intro-highlight-card:hover {
+            border-color: rgba(var(--secondary-rgb), 0.15);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .intro-highlight-card svg {
+            width: 28px;
+            height: 28px;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .intro-highlight-card h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .intro-highlight-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .intro-image-area {
+            position: relative;
+        }
+
+        .intro-stats-card {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-stats-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.1) 0%, transparent 70%);
+        }
+
+        .intro-stats-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro-stats-inner h3 {
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        .intro-stat-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .intro-stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .intro-stat-item .number {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .intro-stat-item .label {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Home Services Preview */
+        .home-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .home-service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-slow);
+        }
+
+        .home-service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(var(--secondary-rgb), 0.12);
+        }
+
+        .home-service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .home-service-card .icon-box {
+            width: 60px;
+            height: 60px;
+        }
+
+        .home-service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .home-service-card p {
+            font-size: 0.92rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .service-link svg {
+            width: 16px;
+            height: 16px;
+            transition: var(--transition);
+        }
+
+        .service-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Home Testimonials Preview */
+        .home-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .home-testimonial {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .home-testimonial:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(var(--secondary-rgb), 0.12);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-stars svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.85;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .testimonial-author span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* Email First Preview */
+        .email-first-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .email-first-features {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .email-feature {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .email-feature .feature-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(var(--secondary-rgb), 0.08);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .email-feature .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+        }
+
+        .email-feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .email-feature p {
+            font-size: 0.92rem;
+            margin: 0;
+            line-height: 1.75;
+        }
+
+        .email-card-visual {
+            background: var(--primary);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-card-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.08) 0%, transparent 70%);
+        }
+
+        .email-card-visual h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .email-mock {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .email-mock-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .email-mock-dot {
+            width: 36px;
+            height: 36px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .email-mock-sender {
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .email-mock-time {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .email-mock-subject {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.92rem;
+            margin-bottom: 8px;
+        }
+
+        .email-mock-body {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .home-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .home-services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .email-first-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .home-hero {
+                padding: 120px 0 80px;
+                min-height: auto;
+            }
+
+            .hero-stats {
+                gap: 20px;
+            }
+
+            .hero-stat-divider {
+                display: none;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .intro-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-stat-items {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .home-services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-hero { padding: 110px 0 60px; }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-stats {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .hero-stat {
+                background: rgba(255,255,255,0.04);
+                padding: 16px 12px;
+                border-radius: var(--radius-sm);
+            }
+
+            .hero-stat-number {
+                font-size: 1.6rem;
+            }
+
+            .intro-stat-items {
+                grid-template-columns: 1fr;
+            }
+
+            .email-card-visual {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">T</div>
+            <div class="preloader-text">Tom Umar</div>
+            <div class="preloader-bar"><div class="preloader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/images/Tom Umar.png" alt="Tom Umar - Book Marketing Specialist Expert" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:#fff;">Tom <span style="color:var(--secondary);">Umar</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="about/" class="nav-link">About</a></li>
+                <li><a href="services/" class="nav-link">Services</a></li>
+                <li><a href="process/" class="nav-link">Process</a></li>
+                <li><a href="results/" class="nav-link">Results</a></li>
+                <li><a href="testimonials/" class="nav-link">Testimonials</a></li>
+                <li><a href="faq/" class="nav-link">FAQ</a></li>
+                <li><a href="contact/" class="nav-link nav-cta">Get In Touch</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="home-hero" id="hero">
+        <div class="page-hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <div class="home-hero-content">
+            <div class="hero-badge anim-fade-down">
+                <span class="badge-dot"></span>
+                Book Marketing Specialist Expert
+            </div>
+
+            <h1 class="anim-fade-up">
+                Helping Authors Turn Their Books Into <span class="highlight-gradient">Bestsellers</span>
+            </h1>
+
+            <p class="hero-subtitle anim-fade-up delay-1">
+                With over 10 years of dedicated experience in the publishing industry, I craft strategic, data-driven marketing campaigns that connect your book with the readers who need it most. From launch strategy to long-term brand building, every detail is handled with precision, transparency, and an unwavering commitment to your success as an author.
+            </p>
+
+            <div class="hero-buttons anim-fade-up delay-2">
+                <a href="contact/" class="btn btn-primary">
+                    <span>Start Your Campaign</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="services/" class="btn btn-outline">
+                    <span>Explore Services</span>
+                    <i data-lucide="chevron-right"></i>
+                </a>
+            </div>
+
+            <div class="hero-stats anim-fade-up delay-3">
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-counter="100" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Books Marketed</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-counter="50" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Bestselling Authors</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-counter="15" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Genres Covered</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" data-counter="10" data-suffix="+">0</span>
+                    <span class="hero-stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator anim-fade-up delay-4">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ===== INTRO / ABOUT PREVIEW ===== -->
+    <section class="section" id="intro">
+        <div class="container">
+            <div class="home-intro-grid">
+                <div class="intro-content anim-fade-right">
+                    <span class="section-tag">Who I Am</span>
+                    <h2 class="section-title" style="text-align:left;">A Decade of Turning Authors Into <span class="highlight">Bestsellers</span></h2>
+                    <p class="lead">
+                        I am Tom Umar, a Book Marketing Specialist Expert who has spent over 10 years helping authors across every genre and publishing path achieve meaningful, lasting success in a rapidly evolving marketplace.
+                    </p>
+                    <p>
+                        My journey into book marketing began with a simple observation: talented authors were writing incredible books, but far too many of those books were never reaching the readers who would love them. The publishing landscape can be overwhelming, filled with conflicting advice, expensive guesswork, and strategies that simply do not deliver results. I set out to change that by building marketing campaigns that are rooted in data, driven by strategy, and measured by real, tangible outcomes.
+                    </p>
+                    <p>
+                        Every project I take on is built on three core principles: precision over guesswork, complete transparency at every step, and email-first communication that ensures everything is documented, underlined, and recorded for future reference. Phone and video calls are reserved for particular occasions when real-time conversation is genuinely necessary.
+                    </p>
+
+                    <div class="intro-highlights">
+                        <div class="intro-highlight-card">
+                            <i data-lucide="target"></i>
+                            <h4>Data-Driven</h4>
+                            <p>Every decision backed by market research and real analytics.</p>
+                        </div>
+                        <div class="intro-highlight-card">
+                            <i data-lucide="shield-check"></i>
+                            <h4>Transparent</h4>
+                            <p>Full visibility into every action, cost, and result.</p>
+                        </div>
+                        <div class="intro-highlight-card">
+                            <i data-lucide="mail"></i>
+                            <h4>Email-First</h4>
+                            <p>Every discussion documented for your permanent records.</p>
+                        </div>
+                        <div class="intro-highlight-card">
+                            <i data-lucide="trending-up"></i>
+                            <h4>Results-Focused</h4>
+                            <p>Strategies built to deliver measurable, lasting outcomes.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:36px;">
+                        <a href="about/" class="btn btn-secondary">
+                            <span>Read My Full Story</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="intro-image-area anim-fade-left">
+                    <div class="intro-stats-card">
+                        <div class="intro-stats-inner">
+                            <h3>By The Numbers</h3>
+                            <div class="intro-stat-items">
+                                <div class="intro-stat-item">
+                                    <span class="number" data-counter="1000000" data-suffix="+">0</span>
+                                    <span class="label">Copies Sold</span>
+                                </div>
+                                <div class="intro-stat-item">
+                                    <span class="number" data-counter="500000" data-prefix="$" data-suffix="+">0</span>
+                                    <span class="label">Ad Spend Managed</span>
+                                </div>
+                                <div class="intro-stat-item">
+                                    <span class="number" data-counter="4" data-decimals="1" data-suffix="x">0</span>
+                                    <span class="label">Average ROAS</span>
+                                </div>
+                                <div class="intro-stat-item">
+                                    <span class="number" data-counter="10000" data-suffix="+">0</span>
+                                    <span class="label">Subscribers Built</span>
+                                </div>
+                                <div class="intro-stat-item">
+                                    <span class="number" data-counter="500" data-suffix="+">0</span>
+                                    <span class="label">Media Placements</span>
+                                </div>
+                                <div class="intro-stat-item">
+                                    <span class="number" data-counter="98" data-suffix="%">0</span>
+                                    <span class="label">Client Satisfaction</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES PREVIEW ===== -->
+    <section class="section section-alt" id="services-preview">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">What I Offer</span>
+                <h2 class="section-title">Comprehensive Book Marketing <span class="highlight">Services</span></h2>
+                <p class="section-description">Every service is tailored to your book, genre, audience, and goals. There is no one-size-fits-all approach. Each strategy is custom-built from the ground up to deliver maximum impact.</p>
+            </div>
+
+            <div class="home-services-grid" data-stagger>
+                <div class="home-service-card stagger-child anim-fade-up">
+                    <div class="icon-box"><i data-lucide="rocket"></i></div>
+                    <h3>Book Launch Campaigns</h3>
+                    <p>Comprehensive launch campaigns that build anticipation, create powerful sales surges during launch week, and sustain momentum long after the initial release. From pre-launch buzz to post-launch optimization, every phase is strategically planned and flawlessly executed.</p>
+                    <a href="services/" class="service-link">Learn more <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="home-service-card stagger-child anim-fade-up delay-1">
+                    <div class="icon-box"><i data-lucide="share-2"></i></div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Strategic social media campaigns that build genuine communities of engaged readers around your work. From Instagram aesthetics and BookTok viral strategies to Twitter engagement and Facebook community building, every post is designed with purpose and backed by analytics.</p>
+                    <a href="services/" class="service-link">Learn more <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="home-service-card stagger-child anim-fade-up delay-2">
+                    <div class="icon-box"><i data-lucide="mail"></i></div>
+                    <h3>Email Marketing</h3>
+                    <p>Build, grow, and manage the single most valuable marketing asset you can own as an author: your email list. From lead magnets and automated welcome sequences to launch broadcasts and ongoing nurture campaigns, I handle every element of your email strategy.</p>
+                    <a href="services/" class="service-link">Learn more <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="home-service-card stagger-child anim-fade-up">
+                    <div class="icon-box"><i data-lucide="bar-chart-2"></i></div>
+                    <h3>Amazon Advertising</h3>
+                    <p>Expert management of Amazon Sponsored Products, Sponsored Brands, and Lockscreen ads with surgical precision. I also run campaigns across BookBub, Kobo, Apple Books, and other retailers to maximize your reach and ensure every advertising dollar works hard for you.</p>
+                    <a href="services/" class="service-link">Learn more <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="home-service-card stagger-child anim-fade-up delay-1">
+                    <div class="icon-box"><i data-lucide="search"></i></div>
+                    <h3>Book SEO and Metadata</h3>
+                    <p>Your book's discoverability depends on your metadata: title, subtitle, description, keywords, and categories. I optimize every element to ensure your book ranks highly in search results, appears in the right categories, and converts browsers into loyal buyers.</p>
+                    <a href="services/" class="service-link">Learn more <i data-lucide="arrow-right"></i></a>
+                </div>
+
+                <div class="home-service-card stagger-child anim-fade-up delay-2">
+                    <div class="icon-box"><i data-lucide="mic"></i></div>
+                    <h3>Author PR and Media</h3>
+                    <p>Leveraging an extensive network of media contacts built over 10+ years to secure meaningful placements in podcasts, blogs, magazines, newspapers, and online publications. Every pitch is carefully crafted to match the outlet's audience and editorial direction.</p>
+                    <a href="services/" class="service-link">Learn more <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top:56px;">
+                <a href="services/" class="btn btn-outline-dark">
+                    <span>View All Services in Detail</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS PREVIEW ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Client Voices</span>
+                <h2 class="section-title">What Authors Say About <span class="highlight">Working With Me</span></h2>
+                <p class="section-description">The best measure of my work is the success and satisfaction of the authors I serve. Here are some of their experiences.</p>
+            </div>
+
+            <div class="home-testimonials-grid">
+                <div class="home-testimonial anim-fade-up">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                    </div>
+                    <p class="testimonial-text">"Working with Tom completely transformed my launch experience. As a debut author, I had no idea where to start with marketing, and Tom handled everything with incredible professionalism. The email-based communication was a huge plus because I could always reference our discussions. I hit the USA Today bestseller list in my first month."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div><strong>Author S</strong><span>Bestselling Psychological Thriller Author</span></div>
+                    </div>
+                </div>
+
+                <div class="home-testimonial anim-fade-up delay-1">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                    </div>
+                    <p class="testimonial-text">"My book had been sitting at 50 copies a month for almost a year before I found Tom. Within six months, we were at 220 copies a month and climbing. What impressed me most was how methodical and transparent the whole process was. Every email included clear data, honest analysis, and specific next steps."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">J</div>
+                        <div><strong>Author J</strong><span>Non-Fiction Author and Entrepreneur</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top:48px;">
+                <a href="testimonials/" class="btn btn-outline-dark">
+                    <span>Read All Testimonials</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EMAIL-FIRST PREVIEW ===== -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="email-first-grid">
+                <div class="anim-fade-right">
+                    <span class="section-tag" style="justify-content:flex-start;">Communication</span>
+                    <h2 class="section-title" style="text-align:left;">Why I Use an <span class="highlight">Email-First</span> Approach</h2>
+                    <p style="margin-bottom:36px;">I communicate with all clients primarily through email. This is a deliberate, strategic choice designed to provide you with the highest quality of service. Email ensures that every strategy discussion, every piece of feedback, every decision, and every report is documented, underlined, and recorded for future reference.</p>
+
+                    <div class="email-first-features">
+                        <div class="email-feature">
+                            <div class="feature-icon"><i data-lucide="file-text"></i></div>
+                            <div>
+                                <h4>Complete Documentation</h4>
+                                <p>Every discussion is permanently recorded. Nothing is lost, forgotten, or misremembered. You have a complete, searchable record of our entire working relationship.</p>
+                            </div>
+                        </div>
+                        <div class="email-feature">
+                            <div class="feature-icon"><i data-lucide="lightbulb"></i></div>
+                            <div>
+                                <h4>Thoughtful Responses</h4>
+                                <p>Email allows me to give your questions careful, researched consideration rather than quick, off-the-cuff answers during a phone call.</p>
+                            </div>
+                        </div>
+                        <div class="email-feature">
+                            <div class="feature-icon"><i data-lucide="shield"></i></div>
+                            <div>
+                                <h4>Built-In Accountability</h4>
+                                <p>A clear written record of every commitment, deadline, and deliverable holds both of us to the highest standards of professionalism.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anim-fade-left">
+                    <div class="email-card-visual">
+                        <h3>How Our Communication Looks</h3>
+                        <div class="email-mock">
+                            <div class="email-mock-header">
+                                <div class="email-mock-dot">T</div>
+                                <div>
+                                    <div class="email-mock-sender">Tom Umar</div>
+                                    <div class="email-mock-time">Today, 10:42 AM</div>
+                                </div>
+                            </div>
+                            <div class="email-mock-subject">Re: Your Campaign Performance Report - Week 4</div>
+                            <div class="email-mock-body">
+                                Good morning! I am pleased to share this week's performance update. Your Amazon ads are performing exceptionally well with a 5.2x ROAS. I have attached the full report with detailed breakdowns by keyword, ad group, and daily trends. Let me know if you have any questions...
+                            </div>
+                        </div>
+                        <div class="email-mock">
+                            <div class="email-mock-header">
+                                <div class="email-mock-dot">T</div>
+                                <div>
+                                    <div class="email-mock-sender">Tom Umar</div>
+                                    <div class="email-mock-time">Yesterday, 3:15 PM</div>
+                                </div>
+                            </div>
+                            <div class="email-mock-subject">Strategy Recommendation: BookTok Campaign Expansion</div>
+                            <div class="email-mock-body">
+                                Based on the strong engagement we are seeing from your BookTok content, I recommend expanding our investment in this channel. Here is my detailed proposal with budget allocation, content strategy, and projected outcomes...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Ready to Take Your Book to the <span class="highlight-gradient">Next Level?</span></h2>
+                <p>Whether you are launching your debut novel or revitalizing your backlist, I am here to help you achieve the results your book deserves. Let's start the conversation.</p>
+                <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                    <a href="contact/" class="btn btn-primary btn-large">
+                        <span>Start Your Campaign</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="results/" class="btn btn-outline btn-large">
+                        <span>See My Results</span>
+                        <i data-lucide="bar-chart-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/Tom%20Umar.png" alt="Tom Umar Logo" class="footer-logo" onerror="this.style.display='none';">
+                    <p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results. Every campaign is built on data, driven by strategy, and documented through transparent email-first communication.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="about/">About</a></li>
+                        <li><a href="services/">Services</a></li>
+                        <li><a href="process/">Process</a></li>
+                        <li><a href="results/">Results</a></li>
+                        <li><a href="testimonials/">Testimonials</a></li>
+                        <li><a href="faq/">FAQ</a></li>
+                        <li><a href="contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services/">Book Launch Campaigns</a></li>
+                        <li><a href="services/">Social Media Marketing</a></li>
+                        <li><a href="services/">Email Marketing</a></li>
+                        <li><a href="services/">Amazon Advertising</a></li>
+                        <li><a href="services/">Book SEO</a></li>
+                        <li><a href="services/">Author PR and Media</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <a href="mailto:hello.tomumar@gmail.com" class="footer-email">
+                        <i data-lucide="mail"></i> hello.tomumar@gmail.com
+                    </a>
+                    <div class="footer-comm-note">
+                        Email-first communication. All discussions documented and recorded. Calls scheduled on particular occasions only.
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved. Book Marketing Specialist Expert.</p>
+                <div class="footer-bottom-links">
+                    <a href="contact/">Contact</a>
+                    <a href="faq/">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script>
+        function dismissPreloader() {
+            var loader = document.getElementById('preloader');
+            if (loader) {
+                loader.style.display = 'none';
+            }
+            document.body.classList.remove('no-scroll');
+        }
+
+        window.addEventListener('load', function() {
+            setTimeout(dismissPreloader, 500);
+        });
+
+        setTimeout(dismissPreloader, 1500);
+
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+    <script src="script.js"></script> 
+</body>
+</html>

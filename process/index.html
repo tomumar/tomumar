@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Process | Tom Umar - Book Marketing Specialist Expert</title>
+    <meta name="description" content="Discover Tom Umar's proven 5-step book marketing process. From discovery and strategy to execution, optimization, and scaling. Transparent, documented, results-driven.">
+    <link rel="icon" type="image/png" href="../images/tom-umar-logo.png">
+    <link rel="apple-touch-icon" href="../images/tom-umar-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ===== PROCESS PAGE STYLES ===== */
+        .process-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 72px;
+            align-items: center;
+        }
+
+        .process-intro-content .lead {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .process-intro-visual {
+            background: var(--primary);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-intro-visual::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(var(--secondary-rgb), 0.1) 0%, transparent 70%);
+        }
+
+        .process-intro-visual h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-promises {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-promise {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .process-promise:hover {
+            background: rgba(var(--secondary-rgb), 0.06);
+            border-color: rgba(var(--secondary-rgb), 0.15);
+        }
+
+        .process-promise svg {
+            width: 22px;
+            height: 22px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .process-promise strong {
+            display: block;
+            color: var(--white);
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .process-promise p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* Full Steps */
+        .process-steps-full {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .step-full {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 64px;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--gray-200);
+            align-items: start;
+        }
+
+        .step-full:last-child {
+            border-bottom: none;
+        }
+
+        .step-full-left {
+            position: sticky;
+            top: 120px;
+            text-align: center;
+        }
+
+        .step-number-large {
+            font-family: var(--font-heading);
+            font-size: 7rem;
+            font-weight: 700;
+            color: var(--gray-200);
+            line-height: 1;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .step-full:hover .step-number-large {
+            color: var(--secondary);
+        }
+
+        .step-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .step-full:hover .step-icon-circle {
+            background: var(--secondary);
+            transform: scale(1.08);
+        }
+
+        .step-icon-circle svg {
+            width: 32px;
+            height: 32px;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .step-full:hover .step-icon-circle svg {
+            color: var(--primary);
+        }
+
+        .step-full-left h3 {
+            font-size: 1.4rem;
+            color: var(--text);
+        }
+
+        .step-full-right h4 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .step-full-right p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .step-full-right .step-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .step-detail-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .step-detail-card:hover {
+            border-color: rgba(var(--secondary-rgb), 0.15);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-detail-card svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .step-detail-card h5 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .step-detail-card p {
+            font-size: 0.88rem;
+            margin: 0;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .step-deliverables {
+            margin-top: 28px;
+        }
+
+        .step-deliverables h5 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--secondary);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .deliverable-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .deliverable-tags span {
+            padding: 8px 18px;
+            background: var(--gray-100);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-light);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .deliverable-tags span:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Communication Section */
+        .comm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .comm-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            transition: var(--transition);
+        }
+
+        .comm-card:hover {
+            background: rgba(var(--secondary-rgb), 0.05);
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-6px);
+        }
+
+        .comm-card-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(var(--secondary-rgb), 0.12);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .comm-card-icon svg {
+            width: 26px;
+            height: 26px;
+            color: var(--secondary);
+        }
+
+        .comm-card h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+        }
+
+        .comm-card p {
+            font-size: 0.93rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.8;
+        }
+
+        /* Timeline Summary */
+        .timeline-summary {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-top: 56px;
+        }
+
+        .timeline-step {
+            text-align: center;
+            padding: 28px 16px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .timeline-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background: var(--gray-300);
+            z-index: 2;
+        }
+
+        .timeline-step:hover {
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .timeline-step h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .timeline-step p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .process-intro { grid-template-columns: 1fr; gap: 48px; }
+            .step-full { grid-template-columns: 1fr; gap: 32px; }
+            .step-full-left { position: static; text-align: left; display: flex; align-items: center; gap: 24px; }
+            .step-icon-circle { margin: 0; }
+            .step-number-large { font-size: 4rem; }
+            .comm-grid { grid-template-columns: 1fr; }
+            .timeline-summary { grid-template-columns: repeat(3, 1fr); }
+            .timeline-step::after { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .step-full-right .step-details-grid { grid-template-columns: 1fr; }
+            .timeline-summary { grid-template-columns: 1fr 1fr; }
+            .step-full { padding: 64px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .step-full-left { flex-direction: column; text-align: center; }
+            .step-number-large { font-size: 3rem; }
+            .step-icon-circle { width: 60px; height: 60px; }
+            .step-icon-circle svg { width: 26px; height: 26px; }
+            .timeline-summary { grid-template-columns: 1fr; }
+            .process-intro-visual { padding: 32px; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+    <div id="preloader"><div class="preloader-inner"><div class="preloader-logo">T</div><div class="preloader-text">Tom Umar</div><div class="preloader-bar"><div class="preloader-fill"></div></div></div></div>
+    <div class="cursor-dot"></div><div class="cursor-ring"></div><div class="nav-overlay" id="navOverlay"></div>
+
+    <nav class="navbar" id="navbar"><div class="nav-container"><a href="../" class="nav-logo"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="logo-img"></a><ul class="nav-menu" id="navMenu"><li><a href="../" class="nav-link">Home</a></li><li><a href="../about/" class="nav-link">About</a></li><li><a href="../services/" class="nav-link">Services</a></li><li><a href="../process/" class="nav-link active">Process</a></li><li><a href="../results/" class="nav-link">Results</a></li><li><a href="../testimonials/" class="nav-link">Testimonials</a></li><li><a href="../faq/" class="nav-link">FAQ</a></li><li><a href="../contact/" class="nav-link nav-cta">Get In Touch</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+    <section class="page-hero">
+        <div class="page-hero-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
+        <div class="page-hero-content">
+            <div class="breadcrumb anim-fade-down"><a href="../">Home</a><span class="separator">/</span><span class="current">Process</span></div>
+            <h1 class="anim-fade-up">My Proven <span class="highlight-gradient">5-Step Process</span></h1>
+            <p class="hero-description anim-fade-up delay-1">Every successful book marketing campaign follows a structured, repeatable, and thoroughly documented process. Here is exactly how I work with each author, from our very first email exchange to the ongoing optimization that keeps your book selling month after month, year after year.</p>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section">
+        <div class="container">
+            <div class="process-intro">
+                <div class="process-intro-content anim-fade-right">
+                    <span class="section-tag" style="justify-content:flex-start;">Why Process Matters</span>
+                    <h2 class="section-title" style="text-align:left;">Structure Creates <span class="highlight">Consistent Results</span></h2>
+                    <p class="lead">In my 10+ years of marketing books, I have learned that the difference between a campaign that delivers exceptional results and one that falls flat almost always comes down to process. Creativity matters, strategy matters, but without a disciplined, structured process to execute that strategy, even the best ideas fail to deliver their full potential.</p>
+                    <p>That is why I have developed and refined a proven 5-step process that guides every project I take on. This process ensures that nothing falls through the cracks, every decision is backed by data and research, every action is documented via email for your records, and every result is measured and optimized for continuous improvement.</p>
+                    <p>The process is flexible enough to adapt to your unique situation while maintaining the structural discipline that delivers consistent, predictable outcomes. Whether you are launching a debut novel or revitalizing a backlist of 20 titles, this framework ensures we cover all the bases and maximize your return on investment at every stage.</p>
+                </div>
+                <div class="process-intro-visual anim-fade-left">
+                    <h3>My Process Promises</h3>
+                    <div class="process-promises">
+                        <div class="process-promise">
+                            <i data-lucide="file-text"></i>
+                            <div><strong>Everything Documented</strong><p>Every step, decision, and result is recorded via email for your permanent records.</p></div>
+                        </div>
+                        <div class="process-promise">
+                            <i data-lucide="bar-chart-2"></i>
+                            <div><strong>Data-Driven Decisions</strong><p>No guesswork. Every decision is backed by research, analysis, and real performance data.</p></div>
+                        </div>
+                        <div class="process-promise">
+                            <i data-lucide="eye"></i>
+                            <div><strong>Full Transparency</strong><p>You see everything I see. Regular reports with complete data and honest assessments.</p></div>
+                        </div>
+                        <div class="process-promise">
+                            <i data-lucide="refresh-cw"></i>
+                            <div><strong>Continuous Optimization</strong><p>Campaigns are never set-and-forget. I test, refine, and improve continuously.</p></div>
+                        </div>
+                        <div class="process-promise">
+                            <i data-lucide="check-circle"></i>
+                            <div><strong>Your Approval Required</strong><p>Nothing happens without your explicit approval. You are always in control.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">The 5 Steps</span>
+                <h2 class="section-title">Every Step <span class="highlight">Explained in Detail</span></h2>
+            </div>
+
+            <div class="process-steps-full">
+                <!-- Step 1 -->
+                <div class="step-full">
+                    <div class="step-full-left anim-fade-right">
+                        <div>
+                            <div class="step-icon-circle"><i data-lucide="search"></i></div>
+                            <div class="step-number-large">01</div>
+                            <h3>Discovery and Assessment</h3>
+                        </div>
+                    </div>
+                    <div class="step-full-right anim-fade-left">
+                        <h4>Understanding Your Book, Your Market, and Your Goals</h4>
+                        <p>Everything begins with a thorough discovery phase. You will email me the details about your book, your goals, your previous marketing efforts (if any), your budget, and your vision for success. I will review everything carefully, conduct in-depth research into your genre and competitive landscape, analyze comparable titles and their marketing strategies, and develop a comprehensive assessment of your current position in the marketplace.</p>
+                        <p>This is not a rushed process. I take the time to truly understand your book, your unique voice, your target audience, and your definition of success before making any recommendations. The discovery phase typically takes 5 to 7 business days, during which I will ask follow-up questions via email to ensure I have a complete picture of your situation.</p>
+                        <p>At the end of this phase, you will receive a detailed Discovery Report via email that includes my analysis of your market position, identified opportunities and challenges, and preliminary strategic recommendations. This document becomes the foundation for everything that follows.</p>
+
+                        <div class="step-details-grid">
+                            <div class="step-detail-card">
+                                <i data-lucide="book-open"></i>
+                                <h5>Book Analysis</h5>
+                                <p>Deep dive into your book's genre positioning, cover appeal, description effectiveness, and metadata quality.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="users"></i>
+                                <h5>Audience Research</h5>
+                                <p>Identification of your ideal reader demographics, behaviors, preferred platforms, and purchasing patterns.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="layers"></i>
+                                <h5>Competitive Analysis</h5>
+                                <p>Study of comparable titles, their marketing strategies, pricing, rankings, and what is working in your niche.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="compass"></i>
+                                <h5>Opportunity Mapping</h5>
+                                <p>Identification of untapped marketing channels, underserved keywords, and strategic positioning opportunities.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-deliverables">
+                            <h5>Deliverables</h5>
+                            <div class="deliverable-tags">
+                                <span>Discovery Report</span>
+                                <span>Market Analysis</span>
+                                <span>Competitive Landscape Review</span>
+                                <span>Audience Profile Document</span>
+                                <span>Initial Recommendations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-full">
+                    <div class="step-full-left anim-fade-right">
+                        <div>
+                            <div class="step-icon-circle"><i data-lucide="map"></i></div>
+                            <div class="step-number-large">02</div>
+                            <h3>Custom Strategy Development</h3>
+                        </div>
+                    </div>
+                    <div class="step-full-right anim-fade-left">
+                        <h4>Building Your Personalized Marketing Blueprint</h4>
+                        <p>Based on the discovery findings, I build a completely custom marketing strategy tailored specifically to your book, genre, audience, publishing path, budget, and goals. This is not a template or a generic plan. It is a comprehensive strategic document that covers every channel we will use, every tactic we will deploy, every timeline milestone, every budget allocation, and every expected outcome.</p>
+                        <p>The strategy document is extensive and detailed. It typically runs 15 to 25 pages and includes specific campaign plans for each channel (advertising, social media, email, PR), creative direction guidelines, content calendars, keyword strategies, budget breakdowns with projected returns, and clear success metrics that we will use to evaluate performance.</p>
+                        <p>You will receive this comprehensive plan via email with full explanations of each component so you understand exactly what we will be doing and why. I encourage questions, feedback, and discussion. Your input and explicit approval is required before we move forward to execution. This ensures you are fully aligned with and confident in the strategy before any money is spent.</p>
+
+                        <div class="step-details-grid">
+                            <div class="step-detail-card">
+                                <i data-lucide="layout"></i>
+                                <h5>Channel Strategy</h5>
+                                <p>Detailed plans for each marketing channel including Amazon, social media, email, and PR with specific tactics and timelines.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="dollar-sign"></i>
+                                <h5>Budget Allocation</h5>
+                                <p>Precise breakdown of how every dollar will be spent across channels, with projected returns for each investment.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="calendar"></i>
+                                <h5>Timeline and Milestones</h5>
+                                <p>Week-by-week execution schedule with clear milestones, checkpoints, and decision points throughout the campaign.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="target"></i>
+                                <h5>Success Metrics</h5>
+                                <p>Clearly defined KPIs and benchmarks that we will use to measure campaign performance and guide optimization decisions.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-deliverables">
+                            <h5>Deliverables</h5>
+                            <div class="deliverable-tags">
+                                <span>Full Strategy Document (15-25 pages)</span>
+                                <span>Channel-by-Channel Plans</span>
+                                <span>Budget Allocation Breakdown</span>
+                                <span>Content Calendar</span>
+                                <span>Timeline with Milestones</span>
+                                <span>KPI Dashboard Setup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-full">
+                    <div class="step-full-left anim-fade-right">
+                        <div>
+                            <div class="step-icon-circle"><i data-lucide="rocket"></i></div>
+                            <div class="step-number-large">03</div>
+                            <h3>Campaign Build and Launch</h3>
+                        </div>
+                    </div>
+                    <div class="step-full-right anim-fade-left">
+                        <h4>Turning Strategy Into Action</h4>
+                        <p>With the strategy approved, I move into full execution mode. This is where all the planning translates into real-world action. Ad campaigns are built, tested, and launched across Amazon and other platforms. Social media content is created and scheduled. Email sequences are written, designed, and activated. Media pitches are crafted and sent to targeted contacts. Metadata is optimized across all retail platforms.</p>
+                        <p>I handle all the technical setup, creative development, copywriting, platform management, and campaign configuration so you can focus on what you do best: writing your next book. Throughout this phase, I keep you informed via email about what is being launched, when, and what to expect. You will receive confirmation emails as each component goes live.</p>
+                        <p>The launch phase is carefully choreographed to ensure maximum impact. Every element is timed to work together synergistically, creating a coordinated wave of visibility across multiple channels simultaneously. This is one of the most important advantages of working with a dedicated book marketing specialist rather than managing individual freelancers or agencies for each channel separately.</p>
+
+                        <div class="step-details-grid">
+                            <div class="step-detail-card">
+                                <i data-lucide="zap"></i>
+                                <h5>Ad Campaign Activation</h5>
+                                <p>Amazon, Facebook, Instagram, and BookBub campaigns go live with carefully researched targeting and optimized creative.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="image"></i>
+                                <h5>Content Creation</h5>
+                                <p>Social media posts, email templates, ad creatives, and promotional materials are produced and deployed across all channels.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="settings"></i>
+                                <h5>Technical Setup</h5>
+                                <p>Tracking pixels, conversion monitoring, email automation, landing pages, and analytics dashboards are configured and tested.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="send"></i>
+                                <h5>Media Outreach</h5>
+                                <p>Personalized pitches go out to podcasts, bloggers, and media contacts timed to coincide with your campaign launch.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-deliverables">
+                            <h5>Deliverables</h5>
+                            <div class="deliverable-tags">
+                                <span>Live Ad Campaigns</span>
+                                <span>Social Media Content Calendar</span>
+                                <span>Email Automation Sequences</span>
+                                <span>Optimized Metadata</span>
+                                <span>Media Outreach Campaign</span>
+                                <span>Launch Confirmation Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-full">
+                    <div class="step-full-left anim-fade-right">
+                        <div>
+                            <div class="step-icon-circle"><i data-lucide="sliders"></i></div>
+                            <div class="step-number-large">04</div>
+                            <h3>Monitoring, Testing, and Optimization</h3>
+                        </div>
+                    </div>
+                    <div class="step-full-right anim-fade-left">
+                        <h4>Where the Real Magic Happens</h4>
+                        <p>Launching a campaign is only the beginning. The real magic, the difference between good results and exceptional results, happens in the ongoing optimization phase. I monitor every metric daily, run continuous A/B tests on ad creatives, email subject lines, landing page copy, and audience targeting, adjust bids and budgets based on real-time performance data, and refine targeting to improve results week over week.</p>
+                        <p>This phase is where my 10+ years of experience truly shine. I have developed an intuition for what data patterns mean and what adjustments will have the biggest impact, but I always back those instincts with rigorous testing before making significant changes. Every optimization decision is documented and explained in your regular performance reports.</p>
+                        <p>You will receive detailed performance reports via email on a regular schedule (typically weekly during active campaigns). These reports include all key metrics, my analysis of what is working and what is not, specific actions I have taken or plan to take, and recommendations for any strategic adjustments. This level of reporting ensures you always know exactly how your campaigns are performing and what is being done to improve them.</p>
+
+                        <div class="step-details-grid">
+                            <div class="step-detail-card">
+                                <i data-lucide="activity"></i>
+                                <h5>Daily Monitoring</h5>
+                                <p>Every campaign is monitored daily for performance anomalies, budget pacing, and optimization opportunities.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="git-branch"></i>
+                                <h5>A/B Testing</h5>
+                                <p>Continuous testing of ad creatives, headlines, targeting, email subject lines, and content formats to maximize performance.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="trending-up"></i>
+                                <h5>Bid Optimization</h5>
+                                <p>Daily adjustment of advertising bids, budgets, and keyword targeting based on real performance data and trends.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="file-bar-chart"></i>
+                                <h5>Performance Reporting</h5>
+                                <p>Comprehensive weekly reports delivered via email with full data, analysis, insights, and recommended next steps.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-deliverables">
+                            <h5>Deliverables</h5>
+                            <div class="deliverable-tags">
+                                <span>Weekly Performance Reports</span>
+                                <span>A/B Test Results and Insights</span>
+                                <span>Optimization Log</span>
+                                <span>Budget Reallocation Updates</span>
+                                <span>Conversion Analysis</span>
+                                <span>Competitor Monitoring Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="step-full">
+                    <div class="step-full-left anim-fade-right">
+                        <div>
+                            <div class="step-icon-circle"><i data-lucide="trending-up"></i></div>
+                            <div class="step-number-large">05</div>
+                            <h3>Scaling and Long-Term Growth</h3>
+                        </div>
+                    </div>
+                    <div class="step-full-right anim-fade-left">
+                        <h4>Building Sustainable, Career-Long Success</h4>
+                        <p>Once we have identified what is working best through rigorous testing and optimization, I scale those winning strategies to maximize your results. This phase is about building sustainable, long-term growth for your author career, not just short-term sales spikes that fade away after a few weeks.</p>
+                        <p>We expand into new channels, build on proven audiences, develop cross-promotion strategies for your backlist, create evergreen marketing systems that continue delivering results for months and years, and establish you as a recognized authority in your genre. Book marketing is not a one-time event. It is an ongoing investment in your career, and this phase ensures that investment compounds over time.</p>
+                        <p>For authors who continue working with me long-term, I provide quarterly strategy reviews where we assess overall performance, identify new opportunities, adjust our approach based on market changes and new data, and plan the next phase of growth. These reviews ensure that your marketing strategy continues to evolve and improve over time, keeping you ahead of the competition and top-of-mind with your readers.</p>
+
+                        <div class="step-details-grid">
+                            <div class="step-detail-card">
+                                <i data-lucide="maximize-2"></i>
+                                <h5>Channel Expansion</h5>
+                                <p>Scaling winning strategies to new platforms and audiences while maintaining efficiency and return targets.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="library"></i>
+                                <h5>Backlist Integration</h5>
+                                <p>Cross-promoting your entire catalog to maximize the lifetime value of every reader you acquire.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="repeat"></i>
+                                <h5>Evergreen Systems</h5>
+                                <p>Building automated marketing systems that continue generating sales long after the initial campaign ends.</p>
+                            </div>
+                            <div class="step-detail-card">
+                                <i data-lucide="calendar-check"></i>
+                                <h5>Quarterly Reviews</h5>
+                                <p>Comprehensive strategic assessments with updated plans, new opportunities, and refined growth roadmaps.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-deliverables">
+                            <h5>Deliverables</h5>
+                            <div class="deliverable-tags">
+                                <span>Scaling Strategy Document</span>
+                                <span>Long-Term Growth Roadmap</span>
+                                <span>Backlist Marketing Plan</span>
+                                <span>Evergreen Campaign Setup</span>
+                                <span>Quarterly Strategy Reviews</span>
+                                <span>Annual Performance Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communication -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Communication</span>
+                <h2 class="section-title">How We Stay Connected <span class="highlight">Throughout the Process</span></h2>
+                <p class="section-description">Clear, consistent, and documented communication is the backbone of every successful campaign. Here is how I keep you informed and involved at every stage.</p>
+            </div>
+            <div class="comm-grid">
+                <div class="comm-card anim-fade-up">
+                    <div class="comm-card-icon"><i data-lucide="mail"></i></div>
+                    <h3>Email-First Communication</h3>
+                    <p>All primary communication happens via email. This ensures that every discussion, recommendation, decision, and report is fully documented, underlined, and recorded for future reference. You will always have a complete, searchable record of our entire working relationship. I respond to all emails within 24 hours during active campaigns.</p>
+                </div>
+                <div class="comm-card anim-fade-up delay-1">
+                    <div class="comm-card-icon"><i data-lucide="bar-chart-3"></i></div>
+                    <h3>Regular Performance Reports</h3>
+                    <p>You will receive detailed performance reports on a regular schedule, typically weekly during active campaign phases and bi-weekly during maintenance phases. Each report includes all relevant metrics, my analysis and interpretation, actions taken, and recommended next steps. No jargon, no fluff, just clear, actionable information.</p>
+                </div>
+                <div class="comm-card anim-fade-up delay-2">
+                    <div class="comm-card-icon"><i data-lucide="phone"></i></div>
+                    <h3>Calls on Particular Occasions</h3>
+                    <p>Phone and video calls are available and scheduled on particular occasions when real-time conversation adds genuine value. These include campaign kick-off discussions, complex strategy sessions, milestone reviews, and any situation where live dialogue provides more benefit than email. All call outcomes are documented via follow-up email.</p>
+                </div>
+                <div class="comm-card anim-fade-up delay-3">
+                    <div class="comm-card-icon"><i data-lucide="clock"></i></div>
+                    <h3>Responsive and Accessible</h3>
+                    <p>I understand that questions arise and decisions need to be made quickly. During active campaigns, I am highly responsive to your emails and will always acknowledge receipt within a few hours, even if a detailed response requires additional time. You will never feel like your messages are going into a void.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Summary -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">At a Glance</span>
+                <h2 class="section-title">The Full Process <span class="highlight">Timeline</span></h2>
+            </div>
+            <div class="timeline-summary">
+                <div class="timeline-step anim-fade-up"><div class="timeline-step-num">01</div><h4>Discovery</h4><p>5-7 business days</p></div>
+                <div class="timeline-step anim-fade-up delay-1"><div class="timeline-step-num">02</div><h4>Strategy</h4><p>7-10 business days</p></div>
+                <div class="timeline-step anim-fade-up delay-2"><div class="timeline-step-num">03</div><h4>Build and Launch</h4><p>5-14 business days</p></div>
+                <div class="timeline-step anim-fade-up delay-3"><div class="timeline-step-num">04</div><h4>Optimize</h4><p>Ongoing (weeks to months)</p></div>
+                <div class="timeline-step anim-fade-up delay-4"><div class="timeline-step-num">05</div><h4>Scale</h4><p>Long-term growth</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Ready to Start the <span class="highlight-gradient">Process?</span></h2>
+                <p>The first step is simple: email me about your book. I will take it from there with a thorough, professional, and completely documented approach.</p>
+                <a href="../contact/" class="btn btn-primary btn-large"><span>Get In Touch</span><i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="footer-logo"><p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../">Home</a></li><li><a href="../about/">About</a></li><li><a href="../services/">Services</a></li><li><a href="../process/">Process</a></li><li><a href="../results/">Results</a></li><li><a href="../testimonials/">Testimonials</a></li><li><a href="../faq/">FAQ</a></li><li><a href="../contact/">Contact</a></li></ul></div><div class="footer-links"><h4>Services</h4><ul><li><a href="../services/">Book Launch Campaigns</a></li><li><a href="../services/">Social Media Marketing</a></li><li><a href="../services/">Email Marketing</a></li><li><a href="../services/">Amazon Advertising</a></li><li><a href="../services/">Book SEO</a></li><li><a href="../services/">Author PR</a></li></ul></div><div class="footer-contact"><h4>Get In Touch</h4><a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a><div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div></div></div><div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p><div class="footer-bottom-links"><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></div></div></div></footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+    <script src="../script.js"></script>
+</body>
+</html>

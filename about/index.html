@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Tom Umar | Book Marketing Specialist Expert | 10+ Years Experience</title>
+    <meta name="description" content="Learn about Tom Umar, a Book Marketing Specialist Expert with over 10 years of experience helping authors achieve bestseller status through data-driven, transparent marketing strategies.">
+    <link rel="icon" type="image/png" href="../images/tom-umar-logo.png">
+    <link rel="apple-touch-icon" href="../images/tom-umar-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ===== ABOUT PAGE STYLES ===== */
+        .about-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 72px;
+            align-items: start;
+        }
+
+        .about-lead {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 22px;
+        }
+
+        .about-principles {
+            margin: 32px 0 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .about-principles li {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .about-principles li .principle-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(var(--secondary-rgb), 0.08);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .about-principles li .principle-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+        }
+
+        .about-principles li strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .about-principles li p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.85;
+        }
+
+        .about-mission-block {
+            background: linear-gradient(135deg, var(--cream), var(--gray-100));
+            border-left: 5px solid var(--secondary);
+            padding: 36px 40px;
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            margin-top: 40px;
+        }
+
+        .about-mission-block .quote-icon {
+            color: var(--secondary);
+            opacity: 0.3;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 16px;
+        }
+
+        .about-mission-block p {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Sidebar */
+        .about-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-xl);
+            padding: 36px;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 28px;
+            font-family: var(--font-heading);
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        .sidebar-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .facts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .facts-list li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .facts-list li svg {
+            width: 22px;
+            height: 22px;
+            color: var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .fact-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1;
+        }
+
+        .fact-label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        /* Journey Timeline */
+        .journey-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--secondary), var(--gray-200));
+        }
+
+        .journey-item {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 56px;
+            position: relative;
+        }
+
+        .journey-item:last-child { margin-bottom: 0; }
+
+        .journey-year {
+            width: 82px;
+            height: 82px;
+            background: var(--primary);
+            color: var(--secondary);
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            border: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .journey-item:hover .journey-year {
+            background: var(--secondary);
+            color: var(--primary);
+            border-color: var(--secondary-light);
+            transform: scale(1.08);
+        }
+
+        .journey-content {
+            flex: 1;
+            padding-top: 12px;
+        }
+
+        .journey-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .journey-content p {
+            font-size: 0.95rem;
+            line-height: 1.85;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .value-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(var(--secondary-rgb), 0.12);
+        }
+
+        .value-card .value-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, rgba(var(--secondary-rgb), 0.12), rgba(var(--secondary-rgb), 0.04));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            transition: var(--transition);
+        }
+
+        .value-card .value-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--secondary);
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--secondary);
+        }
+
+        .value-card:hover .value-icon svg {
+            color: var(--primary);
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .value-card p {
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+
+        /* Genres Served */
+        .genres-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .genre-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-md);
+            padding: 24px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .genre-item:hover {
+            background: rgba(var(--secondary-rgb), 0.08);
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-4px);
+        }
+
+        .genre-item svg {
+            width: 28px;
+            height: 28px;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .genre-item h4 {
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .genre-item p {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            margin: 0;
+        }
+
+        /* Publishing Paths */
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .path-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .path-card:hover {
+            border-color: rgba(var(--secondary-rgb), 0.2);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .path-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .path-card h3 svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+        }
+
+        .path-card p {
+            font-size: 0.93rem;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .path-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .path-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-light);
+        }
+
+        .path-benefits li svg {
+            width: 16px;
+            height: 16px;
+            color: var(--secondary);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        @media (max-width: 1024px) {
+            .about-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .about-sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .genres-grid { grid-template-columns: repeat(3, 1fr); }
+            .paths-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .about-sidebar { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .genres-grid { grid-template-columns: repeat(2, 1fr); }
+            .journey-timeline::before { left: 28px; }
+            .journey-year { width: 58px; height: 58px; font-size: 0.9rem; }
+            .journey-item { gap: 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .journey-timeline::before { display: none; }
+            .journey-item { flex-direction: column; align-items: center; text-align: center; }
+            .genres-grid { grid-template-columns: 1fr 1fr; }
+            .about-mission-block { padding: 28px; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+    <div id="preloader"><div class="preloader-inner"><div class="preloader-logo">T</div><div class="preloader-text">Tom Umar</div><div class="preloader-bar"><div class="preloader-fill"></div></div></div></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="logo-img"></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../" class="nav-link">Home</a></li>
+                <li><a href="../about/" class="nav-link active">About</a></li>
+                <li><a href="../services/" class="nav-link">Services</a></li>
+                <li><a href="../process/" class="nav-link">Process</a></li>
+                <li><a href="../results/" class="nav-link">Results</a></li>
+                <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+                <li><a href="../faq/" class="nav-link">FAQ</a></li>
+                <li><a href="../contact/" class="nav-link nav-cta">Get In Touch</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
+        <div class="page-hero-content">
+            <div class="breadcrumb anim-fade-down"><a href="../">Home</a><span class="separator">/</span><span class="current">About</span></div>
+            <h1 class="anim-fade-up">The Story Behind <span class="highlight-gradient">10+ Years</span> of Excellence</h1>
+            <p class="hero-description anim-fade-up delay-1">Learn about my journey, my philosophy, my core values, and the principles that drive every marketing campaign I build for my clients. This page tells the full story of who I am and how I work.</p>
+        </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="section">
+        <div class="container">
+            <div class="about-intro-grid">
+                <div class="about-content anim-fade-right">
+                    <p class="about-lead">I am Tom Umar, a Book Marketing Specialist Expert who has spent over a decade helping authors across every genre and publishing path achieve meaningful, lasting success in a rapidly evolving marketplace.</p>
+
+                    <p>My journey into book marketing began with a simple yet powerful observation: talented authors were writing incredible books, but far too many of those books were never reaching the readers who would love them. The publishing landscape can be overwhelming, filled with conflicting advice, expensive guesswork, and strategies that simply do not deliver results. I set out to change that.</p>
+
+                    <p>Over the past 10+ years, I have had the privilege of working with debut authors launching their very first title, mid-career authors looking to reignite their sales, and established names seeking to expand into new markets and audiences. I have marketed books across more than 15 genres, managed over $500,000 in advertising spend, and helped generate more than 1,000,000 copies sold across all my campaigns combined. Every single project has reinforced my belief that great marketing is not about hype or empty promises. It is about understanding your book, identifying your ideal readers, and building a strategic, data-informed campaign that connects the two in a way that feels authentic and drives real, measurable sales.</p>
+
+                    <p>What sets my approach apart from other book marketers is a deep commitment to three core principles that guide every decision I make:</p>
+
+                    <div class="about-principles">
+                        <li>
+                            <div class="principle-icon"><i data-lucide="target"></i></div>
+                            <div>
+                                <strong>Precision Over Guesswork</strong>
+                                <p>Every campaign I build is rooted in market research, competitive analysis, and audience data. I do not rely on trends or assumptions. I study what works in your specific genre, test rigorously, and optimize continuously to ensure your marketing budget is working as hard as possible. I track every metric that matters and make data-driven decisions at every stage of the campaign.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="principle-icon"><i data-lucide="shield-check"></i></div>
+                            <div>
+                                <strong>Transparency at Every Step</strong>
+                                <p>You will always know exactly what I am doing, why I am doing it, and what results it is generating. I provide detailed reports, clear explanations, and honest assessments at every stage. No jargon, no hidden costs, no surprises, no vague promises. You will see exactly where every dollar goes and what return it generates. If something is not working, I will tell you immediately and adjust the strategy accordingly.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="principle-icon"><i data-lucide="mail"></i></div>
+                            <div>
+                                <strong>Email-First Communication</strong>
+                                <p>I communicate with all clients primarily through email. This is a deliberate and strategic choice, not a limitation. Email communication ensures that every strategy discussion, every piece of feedback, every decision, and every report is documented, underlined, and recorded for future reference. You will always have a complete, searchable record of our entire working relationship that you can reference at any point in time. Phone or video calls are reserved for particular occasions when real-time conversation is genuinely necessary and adds clear value beyond what email can provide.</p>
+                            </div>
+                        </li>
+                    </div>
+
+                    <div class="about-mission-block">
+                        <i data-lucide="quote" class="quote-icon"></i>
+                        <p>My mission is straightforward: to ensure that every author I work with sees real, measurable, and lasting results from their marketing investment. Your book deserves to be read by the people who will love it, and I am here to make that happen through strategic, transparent, and meticulously documented work.</p>
+                    </div>
+                </div>
+
+                <div class="about-sidebar anim-fade-left">
+                    <div class="sidebar-card">
+                        <h3>Quick Facts</h3>
+                        <ul class="facts-list">
+                            <li><i data-lucide="book-open"></i><div><span class="fact-number">100+</span><span class="fact-label">Books Successfully Marketed</span></div></li>
+                            <li><i data-lucide="trophy"></i><div><span class="fact-number">50+</span><span class="fact-label">Bestseller Authors Created</span></div></li>
+                            <li><i data-lucide="globe"></i><div><span class="fact-number">15+</span><span class="fact-label">Genres Covered</span></div></li>
+                            <li><i data-lucide="calendar"></i><div><span class="fact-number">10+</span><span class="fact-label">Years of Industry Experience</span></div></li>
+                            <li><i data-lucide="dollar-sign"></i><div><span class="fact-number">$500K+</span><span class="fact-label">Total Ad Spend Managed</span></div></li>
+                            <li><i data-lucide="bar-chart-3"></i><div><span class="fact-number">4.2x</span><span class="fact-label">Average Return on Ad Spend</span></div></li>
+                            <li><i data-lucide="users"></i><div><span class="fact-number">10,000+</span><span class="fact-label">Email Subscribers Generated</span></div></li>
+                            <li><i data-lucide="mic"></i><div><span class="fact-number">500+</span><span class="fact-label">Media Placements Secured</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h3>Areas of Expertise</h3>
+                        <div class="expertise-tags">
+                            <span class="tag">Book Launch Strategy</span>
+                            <span class="tag">Amazon Advertising</span>
+                            <span class="tag">Social Media Marketing</span>
+                            <span class="tag">Email List Building</span>
+                            <span class="tag">Author Branding</span>
+                            <span class="tag">Book SEO</span>
+                            <span class="tag">Public Relations</span>
+                            <span class="tag">Podcast Outreach</span>
+                            <span class="tag">BookTok Strategy</span>
+                            <span class="tag">Goodreads Marketing</span>
+                            <span class="tag">Review Generation</span>
+                            <span class="tag">Metadata Optimization</span>
+                            <span class="tag">Genre Positioning</span>
+                            <span class="tag">Backlist Revitalization</span>
+                            <span class="tag">Series Marketing</span>
+                            <span class="tag">ARC Campaigns</span>
+                            <span class="tag">Cross-Platform Ads</span>
+                            <span class="tag">Audience Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Journey -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">A Decade of Growth, Learning, and <span class="highlight">Results</span></h2>
+                <p class="section-description">Every year of my career has brought new challenges, new insights, and new opportunities to refine my craft. Here are some of the key milestones that have shaped who I am as a marketer.</p>
+            </div>
+            <div class="journey-timeline">
+                <div class="journey-item anim-fade-right">
+                    <div class="journey-year">2015</div>
+                    <div class="journey-content">
+                        <h3>The Beginning</h3>
+                        <p>I began my career in book marketing after spending years observing the struggles authors faced in getting their work noticed. My first campaigns were small, focused, and scrappy. I learned everything I could about Amazon's algorithms, social media marketing, and audience building. Those early experiences taught me the importance of data, testing, and relentless optimization. Even with limited budgets, I was able to achieve meaningful results that validated my approach and fueled my passion for this work.</p>
+                    </div>
+                </div>
+                <div class="journey-item anim-fade-left">
+                    <div class="journey-year">2017</div>
+                    <div class="journey-content">
+                        <h3>First Bestseller Achievement</h3>
+                        <p>I helped my first author reach a major bestseller list, proving that strategic, data-driven marketing could compete with and even outperform the marketing budgets of major publishing houses. This milestone was a turning point. It showed me and my clients that the right strategy, executed with precision and discipline, can produce extraordinary results regardless of the size of the budget or the author's existing platform.</p>
+                    </div>
+                </div>
+                <div class="journey-item anim-fade-right">
+                    <div class="journey-year">2019</div>
+                    <div class="journey-content">
+                        <h3>Expanding Expertise and Reach</h3>
+                        <p>By this point, I had successfully marketed books across more than 10 genres and developed deep expertise in Amazon advertising, email marketing, and social media strategy. I refined my email-first communication model after realizing that clients who had everything documented in writing consistently had better experiences, fewer misunderstandings, and stronger working relationships. This became a permanent pillar of my practice.</p>
+                    </div>
+                </div>
+                <div class="journey-item anim-fade-left">
+                    <div class="journey-year">2021</div>
+                    <div class="journey-content">
+                        <h3>50+ Authors, $300K+ in Managed Ad Spend</h3>
+                        <p>I crossed the milestone of having worked with over 50 authors and managed more than $300,000 in advertising spend. My processes became more refined, my strategies more sophisticated, and my results more consistent. I began developing proprietary frameworks for book launch campaigns, backlist revitalization, and long-term author brand building that would become the foundation of my current methodology.</p>
+                    </div>
+                </div>
+                <div class="journey-item anim-fade-right">
+                    <div class="journey-year">2023</div>
+                    <div class="journey-content">
+                        <h3>1 Million Copies Sold Milestone</h3>
+                        <p>The combined sales across all my campaigns surpassed 1,000,000 copies sold. This was not just a number. It represented thousands of readers connecting with stories and knowledge that changed their lives, entertained them, and inspired them. It also represented the trust that over 100 authors placed in me to handle one of the most important aspects of their creative careers.</p>
+                    </div>
+                </div>
+                <div class="journey-item anim-fade-left">
+                    <div class="journey-year">2026</div>
+                    <div class="journey-content">
+                        <h3>Today and Beyond</h3>
+                        <p>Today, I continue to work with select authors who are serious about achieving exceptional results. My methods have been refined through thousands of campaigns, hundreds of A/B tests, and an unwavering commitment to staying at the absolute forefront of book marketing best practices. I am constantly learning, constantly testing, and constantly pushing the boundaries of what is possible in this industry. The best is always yet to come.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Core Values</span>
+                <h2 class="section-title">The Principles That <span class="highlight">Guide Everything</span> I Do</h2>
+                <p class="section-description">These are not just words on a page. These are the non-negotiable standards I hold myself to in every interaction, every campaign, and every decision I make on behalf of my clients.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card anim-fade-up">
+                    <div class="value-icon"><i data-lucide="target"></i></div>
+                    <h3>Strategic Precision</h3>
+                    <p>Every campaign is built on thorough research, competitive analysis, and audience insights. I never guess. I test, measure, and optimize until we find the strategies that deliver the highest return on your investment. Precision is not optional. It is the foundation of everything I do.</p>
+                </div>
+                <div class="value-card anim-fade-up delay-1">
+                    <div class="value-icon"><i data-lucide="eye"></i></div>
+                    <h3>Radical Transparency</h3>
+                    <p>You will always know exactly what I am doing, why I am doing it, how much it costs, and what results it is generating. I share the good news and the challenging news with equal honesty. Trust is built through transparency, and I take that responsibility seriously.</p>
+                </div>
+                <div class="value-card anim-fade-up delay-2">
+                    <div class="value-icon"><i data-lucide="file-text"></i></div>
+                    <h3>Documentation Excellence</h3>
+                    <p>Every conversation, every decision, every strategy, and every result is documented in writing through our email-first communication. This creates a permanent record that protects both of us and ensures nothing is ever lost, forgotten, or misunderstood.</p>
+                </div>
+                <div class="value-card anim-fade-up">
+                    <div class="value-icon"><i data-lucide="heart"></i></div>
+                    <h3>Genuine Partnership</h3>
+                    <p>I do not see myself as a vendor or a service provider. I see myself as a strategic partner invested in your success. Your wins are my wins. I care deeply about the outcome of every campaign, and I bring the same level of dedication to a $3,000 project as I do to a $20,000 project.</p>
+                </div>
+                <div class="value-card anim-fade-up delay-1">
+                    <div class="value-icon"><i data-lucide="refresh-cw"></i></div>
+                    <h3>Continuous Improvement</h3>
+                    <p>The book marketing landscape changes rapidly, and I am committed to staying at the cutting edge. I invest heavily in ongoing education, attend industry conferences, study platform algorithm changes, and continuously refine my strategies based on the latest data and trends.</p>
+                </div>
+                <div class="value-card anim-fade-up delay-2">
+                    <div class="value-icon"><i data-lucide="award"></i></div>
+                    <h3>Uncompromising Quality</h3>
+                    <p>I would rather turn down a project than deliver mediocre work. Every ad I write, every email I craft, every strategy I develop meets my personal standard of excellence. I take enormous pride in the quality of my work, and that pride shows in the results I deliver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Genres -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Genres I Serve</span>
+                <h2 class="section-title">Expertise Across <span class="highlight">15+ Genres</span></h2>
+                <p class="section-description">My data-driven approach means I can develop effective strategies for virtually any genre. Here are the genres I have the most extensive experience with.</p>
+            </div>
+            <div class="genres-grid" data-stagger>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="skull"></i><h4>Thriller / Mystery</h4><p>25+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="heart"></i><h4>Romance</h4><p>20+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="wand-2"></i><h4>Fantasy / Sci-Fi</h4><p>18+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="briefcase"></i><h4>Business / Self-Help</h4><p>15+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="feather"></i><h4>Literary Fiction</h4><p>10+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="book-open"></i><h4>Memoir</h4><p>8+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="baby"></i><h4>Children's Books</h4><p>7+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="sparkles"></i><h4>Young Adult</h4><p>6+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="clock"></i><h4>Historical Fiction</h4><p>5+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="activity"></i><h4>Health / Wellness</h4><p>5+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="ghost"></i><h4>Horror</h4><p>4+ titles</p></div>
+                <div class="genre-item stagger-child anim-fade-up"><i data-lucide="pen-tool"></i><h4>Poetry</h4><p>3+ titles</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publishing Paths -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header anim-fade-up">
+                <span class="section-tag">Who I Work With</span>
+                <h2 class="section-title">Authors Across Every <span class="highlight">Publishing Path</span></h2>
+                <p class="section-description">Whether you are self-published, traditionally published, or hybrid, I bring the same level of expertise and dedication to your marketing campaign.</p>
+            </div>
+            <div class="paths-grid">
+                <div class="path-card anim-fade-up">
+                    <h3><i data-lucide="user"></i> Self-Published Authors</h3>
+                    <p>Self-published authors have complete creative control but often lack the marketing infrastructure that traditional publishers provide. I fill that gap with comprehensive strategies that cover everything from metadata optimization and Amazon advertising to social media marketing and email list building. You get the full marketing department experience without giving up any creative control or royalties.</p>
+                    <ul class="path-benefits">
+                        <li><i data-lucide="check"></i> Full-service marketing without publisher overhead</li>
+                        <li><i data-lucide="check"></i> Maximum ROI from every marketing dollar spent</li>
+                        <li><i data-lucide="check"></i> Complete creative control maintained throughout</li>
+                        <li><i data-lucide="check"></i> Build a sustainable independent author business</li>
+                    </ul>
+                </div>
+                <div class="path-card anim-fade-up delay-1">
+                    <h3><i data-lucide="building"></i> Traditionally Published Authors</h3>
+                    <p>Even with a traditional publisher behind you, their marketing support is often limited, especially for midlist authors. I work alongside your publisher's efforts to amplify results, fill gaps in their marketing plan, and ensure your book gets the attention it truly deserves. My strategies complement and enhance whatever your publisher is already doing without any conflict or overlap.</p>
+                    <ul class="path-benefits">
+                        <li><i data-lucide="check"></i> Supplement limited publisher marketing budgets</li>
+                        <li><i data-lucide="check"></i> Independent strategies that complement publisher efforts</li>
+                        <li><i data-lucide="check"></i> Build your personal brand beyond your publisher's reach</li>
+                        <li><i data-lucide="check"></i> Strengthen your position for future contract negotiations</li>
+                    </ul>
+                </div>
+                <div class="path-card anim-fade-up delay-2">
+                    <h3><i data-lucide="git-merge"></i> Hybrid Published Authors</h3>
+                    <p>Hybrid authors face unique challenges that require a marketer who understands both the traditional and self-publishing worlds. I create unified strategies that account for the specific dynamics of hybrid publishing, ensuring consistency across all platforms and maximizing the unique advantages that the hybrid model offers. My approach bridges both worlds seamlessly.</p>
+                    <ul class="path-benefits">
+                        <li><i data-lucide="check"></i> Unified strategy across traditional and self-pub titles</li>
+                        <li><i data-lucide="check"></i> Maximize advantages of the hybrid model</li>
+                        <li><i data-lucide="check"></i> Consistent branding and marketing across all titles</li>
+                        <li><i data-lucide="check"></i> Strategic guidance on future publishing decisions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Ready to Work With a Marketing Expert Who <span class="highlight-gradient">Truly Cares?</span></h2>
+                <p>I would love to learn about your book, understand your goals, and explore how I can help you achieve the success your work deserves. Let's start the conversation today.</p>
+                <a href="../contact/" class="btn btn-primary btn-large"><span>Get In Touch</span><i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><img src="../images/tom-umar-logo.png" alt="Tom Umar" class="footer-logo"><p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p></div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../">Home</a></li><li><a href="../about/">About</a></li><li><a href="../services/">Services</a></li><li><a href="../process/">Process</a></li><li><a href="../results/">Results</a></li><li><a href="../testimonials/">Testimonials</a></li><li><a href="../faq/">FAQ</a></li><li><a href="../contact/">Contact</a></li></ul></div>
+                <div class="footer-links"><h4>Services</h4><ul><li><a href="../services/">Book Launch Campaigns</a></li><li><a href="../services/">Social Media Marketing</a></li><li><a href="../services/">Email Marketing</a></li><li><a href="../services/">Amazon Advertising</a></li><li><a href="../services/">Book SEO</a></li><li><a href="../services/">Author PR</a></li></ul></div>
+                <div class="footer-contact"><h4>Get In Touch</h4><a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a><div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p><div class="footer-bottom-links"><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></div></div>
+        </div>
+    </footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+    <script src="../script.js"></script>
+</body>
+</html>

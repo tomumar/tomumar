@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Tom Umar - Book Marketing Specialist Expert</title>
+    <meta name="description" content="Read what authors say about working with Tom Umar, Book Marketing Specialist Expert. Real testimonials from real clients with verified results.">
+    <link rel="icon" type="image/png" href="images/Tom Umar.png">
+    <link rel="apple-touch-icon" href="images/Tom Umar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .testimonials-main-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .testimonial-card-full {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-slow);
+        }
+
+        .testimonial-card-full:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(var(--secondary-rgb), 0.15);
+        }
+
+        .testimonial-card-full:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tc-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+
+        .tc-stars svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .tc-quote-icon {
+            color: var(--secondary);
+            opacity: 0.15;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+        }
+
+        .tc-text {
+            font-size: 1.02rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        .tc-results {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 28px;
+            padding: 20px;
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+        }
+
+        .tc-result-item {
+            text-align: center;
+        }
+
+        .tc-result-number {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .tc-result-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .tc-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .tc-avatar {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .tc-author strong {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .tc-author span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Featured Testimonial */
+        .featured-testimonial {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 64px;
+            border: none;
+        }
+
+        .featured-testimonial:hover {
+            border-color: transparent;
+        }
+
+        .featured-testimonial::before { display: none; }
+
+        .featured-testimonial .tc-stars svg {
+            fill: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .featured-testimonial .tc-text {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+        }
+
+        .featured-testimonial .tc-author {
+            border-top-color: rgba(255,255,255,0.1);
+        }
+
+        .featured-testimonial .tc-author strong {
+            color: var(--white);
+        }
+
+        .featured-testimonial .tc-author span {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .featured-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .featured-stat {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+        }
+
+        .featured-stat-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(var(--secondary-rgb), 0.12);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .featured-stat-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--secondary);
+        }
+
+        .featured-stat-number {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .featured-stat-label {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.45);
+        }
+
+        @media (max-width: 1024px) {
+            .testimonials-main-grid { grid-template-columns: 1fr; }
+            .featured-testimonial { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card-full { padding: 32px; }
+            .featured-testimonial { padding: 36px; }
+            .tc-results { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card-full { padding: 24px; }
+            .featured-testimonial { padding: 28px; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+    <div id="preloader"><div class="preloader-inner"><div class="preloader-logo">T</div><div class="preloader-text">Tom Umar</div><div class="preloader-bar"><div class="preloader-fill"></div></div></div></div>
+    <div class="cursor-dot"></div><div class="cursor-ring"></div><div class="nav-overlay" id="navOverlay"></div>
+
+    <nav class="navbar" id="navbar"><div class="nav-container"><a href="images/Tom Umar.png"><img src="images/Tom Umar.png" alt="Tom Umar" class="logo-img"></a><ul class="nav-menu" id="navMenu"><li><a href="../" class="nav-link">Home</a></li><li><a href="../about/" class="nav-link">About</a></li><li><a href="../services/" class="nav-link">Services</a></li><li><a href="../process/" class="nav-link">Process</a></li><li><a href="../results/" class="nav-link">Results</a></li><li><a href="../testimonials/" class="nav-link active">Testimonials</a></li><li><a href="../faq/" class="nav-link">FAQ</a></li><li><a href="../contact/" class="nav-link nav-cta">Get In Touch</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+
+    <section class="page-hero">
+        <div class="page-hero-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
+        <div class="page-hero-content">
+            <div class="breadcrumb anim-fade-down"><a href="../">Home</a><span class="separator">/</span><span class="current">Testimonials</span></div>
+            <h1 class="anim-fade-up">What Authors Say About <span class="highlight-gradient">Working With Me</span></h1>
+            <p class="hero-description anim-fade-up delay-1">The best measure of my work is the success and satisfaction of the authors I serve. Below are detailed testimonials from clients who have experienced my process, my communication style, and my results firsthand. All identities are kept confidential.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="testimonials-main-grid">
+
+                <!-- Featured -->
+                <div class="featured-testimonial testimonial-card-full anim-fade-up">
+                    <div>
+                        <div class="tc-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                        <i data-lucide="quote" class="tc-quote-icon" style="color:var(--secondary);opacity:0.2;"></i>
+                        <p class="tc-text">"Working with Tom completely transformed my launch experience and my entire career trajectory as an author. As a debut novelist with absolutely no platform, no email list, and no idea where to start with marketing, I was overwhelmed and frankly terrified. Tom handled everything with incredible professionalism, patience, and attention to every single detail. The email-based communication was a massive advantage because I could always go back and reference our strategy discussions, review his recommendations, and track the progress of every campaign component. I hit the USA Today bestseller list in my very first month as a published author. I genuinely cannot recommend Tom highly enough to any author who is serious about their career and wants to work with someone who truly cares about delivering real results."</p>
+                        <div class="tc-author">
+                            <div class="tc-avatar">S</div>
+                            <div><strong>Author S</strong><span>Bestselling Psychological Thriller Author</span></div>
+                        </div>
+                    </div>
+                    <div class="featured-right">
+                        <div class="featured-stat">
+                            <div class="featured-stat-icon"><i data-lucide="book-open"></i></div>
+                            <div><span class="featured-stat-number">4,200</span><span class="featured-stat-label">Copies Sold in First Month</span></div>
+                        </div>
+                        <div class="featured-stat">
+                            <div class="featured-stat-icon"><i data-lucide="trophy"></i></div>
+                            <div><span class="featured-stat-number">USA Today</span><span class="featured-stat-label">Bestseller List Achieved</span></div>
+                        </div>
+                        <div class="featured-stat">
+                            <div class="featured-stat-icon"><i data-lucide="trending-up"></i></div>
+                            <div><span class="featured-stat-number">6.8x</span><span class="featured-stat-label">Return on Ad Spend</span></div>
+                        </div>
+                        <div class="featured-stat">
+                            <div class="featured-stat-icon"><i data-lucide="users"></i></div>
+                            <div><span class="featured-stat-number">2,100</span><span class="featured-stat-label">Email Subscribers Built</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Author J -->
+                <div class="testimonial-card-full anim-fade-up">
+                    <div class="tc-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <i data-lucide="quote" class="tc-quote-icon"></i>
+                    <p class="tc-text">"My book had been sitting at 50 copies a month for almost a year before I found Tom. I had tried running my own Amazon ads with disastrous results, hired a social media manager who produced zero measurable impact, and was genuinely ready to give up on the entire project. Within six months of working with Tom, we were at 220 copies a month and climbing. What impressed me most was how methodical and transparent the whole process was. Every email included clear data, honest analysis, and specific next steps. Tom does not just run ads and hope for the best. He builds real, sustainable systems that deliver consistent results over time. He also built my email list from nothing to 3,800 subscribers, which has become my most valuable marketing asset. My only regret is not finding him two years sooner."</p>
+                    <div class="tc-results">
+                        <div class="tc-result-item"><span class="tc-result-number">340%</span><span class="tc-result-label">Sales Increase</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">3,800</span><span class="tc-result-label">Subscribers Built</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">5.1x</span><span class="tc-result-label">ROAS Achieved</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">22</span><span class="tc-result-label">Podcast Features</span></div>
+                    </div>
+                    <div class="tc-author">
+                        <div class="tc-avatar">J</div>
+                        <div><strong>Author J</strong><span>Non-Fiction Author and Entrepreneur</span></div>
+                    </div>
+                </div>
+
+                <!-- Author E -->
+                <div class="testimonial-card-full anim-fade-up">
+                    <div class="tc-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <i data-lucide="quote" class="tc-quote-icon"></i>
+                    <p class="tc-text">"As a traditionally published author with 12 titles in print, I thought I knew everything about book marketing. Tom showed me how much I was leaving on the table. His deep understanding of Amazon's algorithms, advertising platform, and the romance market specifically is genuinely world-class. He took my latest release to number one in Contemporary Romance and increased my entire backlist sales by 45 percent. The level of detail in his reporting is outstanding, and having everything documented via email makes it incredibly easy to track progress, reference past decisions, and maintain a complete record of our strategic journey together. Tom has become an indispensable part of my author business."</p>
+                    <div class="tc-results">
+                        <div class="tc-result-item"><span class="tc-result-number">#1</span><span class="tc-result-label">Category Ranking</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">8,500</span><span class="tc-result-label">Copies in 2 Weeks</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">8.3x</span><span class="tc-result-label">ROAS Achieved</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">45%</span><span class="tc-result-label">Backlist Sales Lift</span></div>
+                    </div>
+                    <div class="tc-author">
+                        <div class="tc-avatar">E</div>
+                        <div><strong>Author E</strong><span>Award-Winning Romance Author</span></div>
+                    </div>
+                </div>
+
+                <!-- Author D -->
+                <div class="testimonial-card-full anim-fade-up">
+                    <div class="tc-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <i data-lucide="quote" class="tc-quote-icon"></i>
+                    <p class="tc-text">"I self-publish epic fantasy novels, and finding a marketer who truly understands the genre and its readers is incredibly rare. Most marketers treat all genres the same, but Tom took the time to understand my world-building, my existing fanbase, the specific dynamics of the fantasy market, and the unique reader behaviors that drive sales in my niche. The results were phenomenal. My latest release sold out its first print run in three weeks, and my email list grew by over 2,000 subscribers. Tom is the real deal, and his email-first approach means I have a complete record of every strategic decision we have ever made together. I have already signed on for my next two releases."</p>
+                    <div class="tc-results">
+                        <div class="tc-result-item"><span class="tc-result-number">3 Weeks</span><span class="tc-result-label">Print Run Sold Out</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">2,000+</span><span class="tc-result-label">New Subscribers</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">28</span><span class="tc-result-label">Podcast Appearances</span></div>
+                        <div class="tc-result-item"><span class="tc-result-number">5.4x</span><span class="tc-result-label">ROAS Achieved</span></div>
+                    </div>
+                    <div class="tc-author">
+                        <div class="tc-avatar">D</div>
+                        <div><strong>Author D</strong><span>Self-Published Fantasy Author</span></div>
+                    </div>
+                </div>
+
+                <!-- Additional Testimonial -->
+                <div class="testimonial-card-full anim-fade-up">
+                    <div class="tc-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                    <i data-lucide="quote" class="tc-quote-icon"></i>
+                    <p class="tc-text">"What separates Tom from every other book marketer I have worked with is his commitment to documentation and transparency. Every single thing we discuss is in writing. Every recommendation, every data point, every strategic decision. As someone who has been burned by marketers who make promises verbally and then deliver nothing, this approach is a breath of fresh air. But beyond the process, the results speak for themselves. Tom turned my struggling memoir into a category bestseller and helped me build a speaking career off the back of the book's success. The ROI has been incredible, not just in book sales but in the opportunities that have opened up because of the visibility he created."</p>
+                    <div class="tc-author">
+                        <div class="tc-avatar">M</div>
+                        <div><strong>Author M</strong><span>Memoir Author and Speaker</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-banner anim-scale">
+                <h2>Ready to Become the Next <span class="highlight-gradient">Success Story?</span></h2>
+                <p>Every testimonial above started with a single email. Reach out today and let's explore how I can help you achieve your book marketing goals.</p>
+                <a href="../contact/" class="btn btn-primary btn-large"><span>Get In Touch</span><i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="images/Tom Umar.png" alt="Tom Umar" class="footer-logo"><p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../">Home</a></li><li><a href="../about/">About</a></li><li><a href="../services/">Services</a></li><li><a href="../process/">Process</a></li><li><a href="../results/">Results</a></li><li><a href="../testimonials/">Testimonials</a></li><li><a href="../faq/">FAQ</a></li><li><a href="../contact/">Contact</a></li></ul></div><div class="footer-links"><h4>Services</h4><ul><li><a href="../services/">Book Launch Campaigns</a></li><li><a href="../services/">Social Media Marketing</a></li><li><a href="../services/">Email Marketing</a></li><li><a href="../services/">Amazon Advertising</a></li><li><a href="../services/">Book SEO</a></li><li><a href="../services/">Author PR</a></li></ul></div><div class="footer-contact"><h4>Get In Touch</h4><a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a><div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div></div></div><div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p><div class="footer-bottom-links"><a href="../contact/">Contact</a><a href="../faq/">FAQ</a></div></div></div></footer>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+    <script src="../script.js"></script>
+</body>
+</html>
