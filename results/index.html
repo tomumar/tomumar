@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results & Case Studies | Tom Umar - Book Marketing Specialist Expert</title>
     <meta name="description" content="Proven results from 10+ years of book marketing. Over 1,000,000 copies sold, 50+ bestselling authors, 4.2x average ROAS. View detailed case studies.">
+    
+    <!-- FIXED: Links to images and css now use relative paths for GitHub Pages -->
     <link rel="icon" type="image/png" href="../images/Tom%20Umar.png">
     <link rel="apple-touch-icon" href="../images/Tom%20Umar.png">
-    <link rel="stylesheet" href="../style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="/style.css">
+    
+    <!-- FIXED: This was /style.css, now it is ../style.css so GitHub finds the design -->
+    <link rel="stylesheet" href="../style.css">
+    
     <style>
         .mega-stats {
             display: grid;
@@ -218,7 +223,27 @@
     <div id="preloader"><div class="preloader-inner"><div class="preloader-logo">T</div><div class="preloader-text">Tom Umar</div><div class="preloader-bar"><div class="preloader-fill"></div></div></div></div>
     <div class="cursor-dot"></div><div class="cursor-ring"></div><div class="nav-overlay" id="navOverlay"></div>
 
-    <nav class="navbar" id="navbar"><div class="nav-container"><a href="/" class="nav-logo"><img src="../images/Tom%20Umar.png" alt="Tom Umar" class="logo-img"></a><ul class="nav-menu" id="navMenu"><li><a href="/" class="nav-link">Home</a></li><li><a href="/about/" class="nav-link">About</a></li><li><a href="/services/" class="nav-link">Services</a></li><li><a href="/process/" class="nav-link">Process</a></li><li><a href="/results/" class="nav-link active">Results</a></li><li><a href="/testimonials/" class="nav-link">Testimonials</a></li><li><a href="/faq/" class="nav-link">FAQ</a></li><li><a href="/contact/" class="nav-link nav-cta">Get In Touch</a></li></ul><button class="hamburger" id="hamburger" aria-label="Toggle menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button></div></nav>
+    <!-- FIXED: Nav links all updated to ../ for proper folder routing -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../images/Tom%20Umar.png" alt="Tom Umar" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../" class="nav-link">Home</a></li>
+                <li><a href="../about/" class="nav-link">About</a></li>
+                <li><a href="../services/" class="nav-link">Services</a></li>
+                <li><a href="../process/" class="nav-link">Process</a></li>
+                <li><a href="../results/" class="nav-link active">Results</a></li>
+                <li><a href="../testimonials/" class="nav-link">Testimonials</a></li>
+                <li><a href="../faq/" class="nav-link">FAQ</a></li>
+                <li><a href="../contact/" class="nav-link nav-cta">Get In Touch</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </nav>
 
     <section class="page-hero">
         <div class="page-hero-shapes"><div class="shape shape-1"></div><div class="shape shape-2"></div><div class="shape shape-3"></div></div>
@@ -390,8 +415,57 @@
         </div>
     </section>
 
-    <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="../images/Tom%20Umar.png" alt="Tom Umar" class="footer-logo"><p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p></div><div class="footer-links"><h4>Quick Links</h4><ul><li><a href="/">Home</a></li><li><a href="/about/">About</a></li><li><a href="/services/">Services</a></li><li><a href="/process/">Process</a></li><li><a href="/results/">Results</a></li><li><a href="/testimonials/">Testimonials</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/contact/">Contact</a></li></ul></div><div class="footer-links"><h4>Services</h4><ul><li><a href="/services/">Book Launch Campaigns</a></li><li><a href="/services/">Social Media Marketing</a></li><li><a href="/services/">Email Marketing</a></li><li><a href="/services/">Amazon Advertising</a></li><li><a href="/services/">Book SEO</a></li><li><a href="/services/">Author PR</a></li></ul></div><div class="footer-contact"><h4>Get In Touch</h4><a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a><div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div></div></div><div class="footer-bottom"><p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p><div class="footer-bottom-links"><a href="/contact/">Contact</a><a href="/faq/">FAQ</a></div></div></div></footer>
+    <!-- FIXED: Footer links all updated to ../ for proper folder routing -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../images/Tom%20Umar.png" alt="Tom Umar" class="footer-logo">
+                    <p>Book Marketing Specialist Expert with over 10 years of experience helping authors achieve real, measurable, and lasting results.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../about/">About</a></li>
+                        <li><a href="../services/">Services</a></li>
+                        <li><a href="../process/">Process</a></li>
+                        <li><a href="../results/">Results</a></li>
+                        <li><a href="../testimonials/">Testimonials</a></li>
+                        <li><a href="../faq/">FAQ</a></li>
+                        <li><a href="../contact/">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/">Book Launch Campaigns</a></li>
+                        <li><a href="../services/">Social Media Marketing</a></li>
+                        <li><a href="../services/">Email Marketing</a></li>
+                        <li><a href="../services/">Amazon Advertising</a></li>
+                        <li><a href="../services/">Book SEO</a></li>
+                        <li><a href="../services/">Author PR</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get In Touch</h4>
+                    <a href="mailto:hello.tomumar@gmail.com" class="footer-email"><i data-lucide="mail"></i> hello.tomumar@gmail.com</a>
+                    <div class="footer-comm-note">Email-first communication. Calls on particular occasions only.</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2026</span> Tom Umar. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="../contact/">Contact</a>
+                    <a href="../faq/">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
     <button class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
-    <script src="/script.js"></script>
+    
+    <!-- FIXED: This was /script.js, now it is ../script.js so JavaScript and counters load perfectly -->
+    <script src="../script.js"></script>
 </body>
 </html>
