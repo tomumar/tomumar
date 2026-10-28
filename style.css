@@ -1591,3 +1591,37 @@ em { font-style: italic; }
         transition: none !important;
     }
 }
+
+/* Add this to the very bottom of your style.css */
+
+/* Force subpage headers to have white text so they don't fade */
+.subpage-header, 
+.subpage-header h1, 
+.subpage-header .display-text, 
+.subpage-header .breadcrumbs,
+.subpage-header .breadcrumbs a {
+    color: #ffffff !important;
+}
+
+.subpage-header .text-gold {
+    color: #c9a84c !important; /* Keep the gold gold */
+}
+
+/* Make sure navigation links are visible against the dark top */
+nav .nav-links a {
+    color: #ffffff !important;
+    opacity: 0.9;
+}
+
+nav.scrolled .nav-links a {
+    color: #ffffff !important;
+}
+
+/* Ensure the stats/numbers are visible */
+.stat-card h2, .stat-item .counter {
+    color: #0b0b0f; /* Dark text on light background cards */
+}
+
+.dark-section .stat-card h2 {
+    color: #c9a84c; /* Gold text on dark sections */
+}
